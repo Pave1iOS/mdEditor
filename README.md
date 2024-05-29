@@ -5,4 +5,6 @@
 
 ![Swift](https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white)
 
-<h3>stuntman12 | Даниил </h3> <h3>PaveliOS | Павел</h3>
+<h2>Coloborations</h2>
+<h3><a href="https://github.com/stuntman12" target="_blank">Daniil | stuntman12 </a></h3>
+<h3><a href="https://github.com/Pave1iOS" target="_blank">Pavel | PaveliOS </a></h3>
