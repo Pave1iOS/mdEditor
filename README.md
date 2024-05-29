@@ -1,4 +1,4 @@
 # SeeFood
 iOS Development Team
 
-![stack Overflow](http://lmsotfy.com/so.png)
+[Image alt] (https://github.com/Pave1iOS/SeeFood/blob/main/seefood.png)
