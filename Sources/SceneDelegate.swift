@@ -9,8 +9,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	var window: UIWindow?
 
 //	private var taskManager = TaskManager()
-	private var orderedTaskManager: OrderedTaskManager!
-	private var appCoordinator: ICoordinator!
+	private var orderedTaskManager: OrderedTaskManager! // swiftlint:disable:this implicitly_unwrapped_optional
+	private var appCoordinator: ICoordinator! // swiftlint:disable:this implicitly_unwrapped_optional
 
 	func scene(
 		_ scene: UIScene,
@@ -44,6 +44,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	}
 
 	func handleDeeplink(url: URL) {
-
 	}
 }

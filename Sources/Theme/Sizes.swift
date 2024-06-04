@@ -36,6 +36,3 @@ enum Sizes {
 	}
 }
 // swiftlint:enable type_name
-
-
-

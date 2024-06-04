@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,11 +17,12 @@
 		3202D5FAC3C6903D53291F60 /* TuistBundle+MyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4409FFC9FAA7B8559ED54DB5 /* TuistBundle+MyApp.swift */; };
 		4025EE60D1684F124B2C5B30 /* TodoListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B04DCF2E9187F2EBCA4C657 /* TodoListCoordinator.swift */; };
 		41757D07626E8CA692AC3B45 /* Sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E011644AC50322983F91258 /* Sizes.swift */; };
+		464635402C0F964F00B98486 /* TaskManagerPackage in Resources */ = {isa = PBXBuildFile; fileRef = 4646353F2C0F964F00B98486 /* TaskManagerPackage */; };
+		464635452C0F97AE00B98486 /* TaskManagerPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 464635442C0F97AE00B98486 /* TaskManagerPackage */; };
 		469B30B47053FF39FC2DC31C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E8E63CA239CA678146A62E /* LaunchScreen.storyboard */; };
 		70894F1B217F1226568CDFC2 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39509CDBF79C10EFBE2AC1BE /* LoginAssembler.swift */; };
 		72E2A6957C3767F0CE7EEC3A /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0260E87410CC4FDEABC53A /* UIViewController+Preview.swift */; };
 		7C6AB8A93F5C6C33719C045A /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D733316B7A3AB5090F78A18 /* LoginWorker.swift */; };
-		8065EFA77D88F8A4973340BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A3345895161F5043080FE85 /* Info.plist */; };
 		88CF8CFB4D48768AB41342BF /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0222C75FCB4A6CDB7E57AD /* TodoListViewController.swift */; };
 		8AE26CBDE1AF7E5C99620C96 /* TodoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13E88326C2DAEC31CC5D8EC /* TodoListModel.swift */; };
 		8D7852209A12EC8AF1105729 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39D5DB909D8FDBF53441918 /* TaskRepository.swift */; };
@@ -68,6 +69,7 @@
 		3A3345895161F5043080FE85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3C0D147CCBB17E81670CEC88 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		4409FFC9FAA7B8559ED54DB5 /* TuistBundle+MyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+MyApp.swift"; sourceTree = "<group>"; };
+		4646353F2C0F964F00B98486 /* TaskManagerPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TaskManagerPackage; path = ../TaskManagerPackage; sourceTree = "<group>"; };
 		51E7A630D6B22E95743BA7B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		531F4BF71CA05A4D5E8C3F5C /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		543ACB84DA77BE4DA91E0269 /* TuistAssets+MyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+MyApp.swift"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464635452C0F97AE00B98486 /* TaskManagerPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +143,7 @@
 		61B286794EC1C95E4FD91338 = {
 			isa = PBXGroup;
 			children = (
+				4646353F2C0F964F00B98486 /* TaskManagerPackage */,
 				F8ECC462873AE0854A6A9DFE /* Project */,
 				5B0225F2DEA83930A42B73F6 /* Frameworks */,
 				FF89FD894BEFEC90C393D9C4 /* Products */,
@@ -286,17 +290,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4FAA3409601C5ECB54DBC85 /* Build configuration list for PBXNativeTarget "MyApp" */;
 			buildPhases = (
+				25D65B80D3EE8C6FA5EF7ECD /* SwiftLint */,
 				750257455CA6C48D952C723D /* Sources */,
 				34FAD6744D8462372A0B029C /* Resources */,
 				7CC481C9D3AB6476D38E18F5 /* Embed Frameworks */,
 				66D150918DB51E31B2E8E584 /* Frameworks */,
-				25D65B80D3EE8C6FA5EF7ECD /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MyApp;
+			packageProductDependencies = (
+				464635442C0F97AE00B98486 /* TaskManagerPackage */,
+			);
 			productName = MyApp;
 			productReference = 1E8A27C0CB29F1F70981B6C9 /* MyApp.app */;
 			productType = "com.apple.product-type.application";
@@ -307,6 +314,8 @@
 		D20D8C134AF0630A2765B38B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = MyOrg;
 			};
 			buildConfigurationList = 46AE2DEEF0ACBEB8BC36F81F /* Build configuration list for PBXProject "MyApp" */;
@@ -318,6 +327,9 @@
 				en,
 			);
 			mainGroup = 61B286794EC1C95E4FD91338;
+			packageReferences = (
+				464635432C0F97AE00B98486 /* XCLocalSwiftPackageReference "../TaskManagerPackage" */,
+			);
 			productRefGroup = FF89FD894BEFEC90C393D9C4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -332,9 +344,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464635402C0F964F00B98486 /* TaskManagerPackage in Resources */,
 				2D7CC64414C4BF7EF45EA60D /* Assets.xcassets in Resources */,
 				469B30B47053FF39FC2DC31C /* LaunchScreen.storyboard in Resources */,
-				8065EFA77D88F8A4973340BF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +355,8 @@
 /* Begin PBXShellScriptBuildPhase section */
 		25D65B80D3EE8C6FA5EF7ECD /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -357,7 +370,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SwiftLint/swiftlint --fix && SwiftLint/swiftlint\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -452,6 +465,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -477,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = F4DM4RJXGM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -499,6 +514,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = F4DM4RJXGM;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -554,6 +570,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -590,6 +607,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		464635432C0F97AE00B98486 /* XCLocalSwiftPackageReference "../TaskManagerPackage" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../TaskManagerPackage;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		464635442C0F97AE00B98486 /* TaskManagerPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TaskManagerPackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D20D8C134AF0630A2765B38B /* Project object */;
 }
