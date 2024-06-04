@@ -1,5 +1,5 @@
 curl -Ls https://install.tuist.io | bash
-tuist install 3.18
+tuist install 3.42.2
 tuist fetch
 tuist generate
 xcodebuild clean -quiet
