@@ -16,5 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: run_xcode
+      run: sudo xcode-select -switch /Applications/Xcode.app
     - name: Build
       run: exec ./.github/build.sh
