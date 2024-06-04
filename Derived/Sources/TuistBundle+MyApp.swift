@@ -4,6 +4,7 @@
 import Foundation
 
 // MARK: - Swift Bundle Accessor
+
 private class BundleFinder {}
 
 extension Foundation.Bundle {
