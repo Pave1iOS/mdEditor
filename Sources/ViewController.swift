@@ -15,7 +15,5 @@ class ViewController: UIViewController {
 		
 		view.backgroundColor = .darkGray
 	}
-
-
 }
 
