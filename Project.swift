@@ -4,8 +4,8 @@ public var scripts: [TargetScript] {
 	
 	var scripts = [TargetScript]()
 	
-	let swiftLintScriptString = "SwiftLint/swiftlint --fix && SwiftLint/swiftlint"
-	let swiftLintScript = TargetScript.post(script: swiftLintScriptString, name: "SwiftLint")
+	let swiftLintScriptString = "swiftlint"
+	let swiftLintScript = TargetScript.post(script: swiftLintScriptString, name: "swiftlint")
 	
 	scripts.append(swiftLintScript)
 	return scripts
