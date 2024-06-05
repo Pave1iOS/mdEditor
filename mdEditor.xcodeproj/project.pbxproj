@@ -269,7 +269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n\tswiftlint\nelse\n\techo \"warning: Swiftlint not installed, download from https://github.com/realm/SwiftLint\"\n\texit 1\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n\tSwiftLint/swiftlint --fix && SwiftLint/swiftlint\nelse\n\techo \"warning: Swiftlint not installed, download from https://github.com/realm/SwiftLint\"\n\texit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
