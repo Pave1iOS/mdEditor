@@ -11,7 +11,6 @@
 		5CCCB587F48C30E9C10C47A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34235C55715F62106D799BA /* ViewController.swift */; };
 		630FC97C20489C8848784E79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A38501C59388FBC6755751A /* Assets.xcassets */; };
 		81E08171DFC993B6ADFEB90F /* TuistPlists+MdEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747CB8A595F7004B6DF4BB74 /* TuistPlists+MdEditor.swift */; };
-		9D69AE6C717342F211CFBFE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08704DAD45EC15E4C8E59634 /* Main.storyboard */; };
 		BEC23EA9B5A4DB3BE6B37DF3 /* TuistBundle+MdEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2403A60D9C04A9B69F4E91 /* TuistBundle+MdEditor.swift */; };
 		D676665AF62EEA53A8798934 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61786CE84D6B855603FC7885 /* SceneDelegate.swift */; };
 		DE7F3C3E85F68C0E7C37AFB8 /* TuistAssets+MdEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87091298DB701E4F355968 /* TuistAssets+MdEditor.swift */; };
@@ -62,7 +61,6 @@
 		7A2403A60D9C04A9B69F4E91 /* TuistBundle+MdEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+MdEditor.swift"; sourceTree = "<group>"; };
 		9A38501C59388FBC6755751A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A34235C55715F62106D799BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A4F49E453C7C8CE9810CD910 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D6A70FDB7080740F5B75D8FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				327E96F7575455E800712E4D /* LaunchScreen.storyboard */,
-				08704DAD45EC15E4C8E59634 /* Main.storyboard */,
 				9A38501C59388FBC6755751A /* Assets.xcassets */,
 				069451BC22799E2512E308C0 /* Info.plist */,
 			);
@@ -205,8 +202,6 @@
 		E693A0CAA1C8ABB1BE877E1A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1540;
 				ORGANIZATIONNAME = SeeFood;
 				TargetAttributes = {
 					76DC9092DFCDFF03FDF54874 = {
@@ -240,7 +235,6 @@
 			files = (
 				630FC97C20489C8848784E79 /* Assets.xcassets in Resources */,
 				E57CBECA17CCB51C1C41879A /* LaunchScreen.storyboard in Resources */,
-				9D69AE6C717342F211CFBFE8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +251,7 @@
 		6EA891147BC11C95C6370513 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
@@ -308,14 +302,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		08704DAD45EC15E4C8E59634 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A4F49E453C7C8CE9810CD910 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		327E96F7575455E800712E4D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -332,9 +318,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = F4DM4RJXGM;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -437,7 +421,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -497,7 +480,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -517,9 +499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = F4DM4RJXGM;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
