@@ -13,7 +13,6 @@ import Foundation
 // swiftlint:disable identifier_name line_length number_separator type_body_length
 public enum Info {
     public static let uiApplicationSceneManifest: [String: Any] = ["UIApplicationSupportsMultipleScenes": false, "UISceneConfigurations": ["UIWindowSceneSessionRoleApplication": [["UISceneConfigurationName": "Default Configuration", "UISceneDelegateClassName": "$(PRODUCT_MODULE_NAME).SceneDelegate"]]]]
-    public static let uiRequiresFullScreen: Bool = true
 }
 // swiftlint:enable identifier_name line_length number_separator type_body_length
 // swiftlint:enable all
