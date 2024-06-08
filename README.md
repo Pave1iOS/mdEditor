@@ -1,7 +1,4 @@
 ![Image alt](https://github.com/Pave1iOS/SeeFood/blob/main/image.png)
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=iOS+Development+Team)](https://git.io/typing-svg) 
-
-![Swift](https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white)
 
 <h2>Coloborations</h2>
 <h3><a href="https://github.com/Pave1iOS" target="_blank">Pavel | PaveliOS </a></h3>
@@ -21,7 +18,7 @@
 - TaskManager -- Менеджер списка заданий;
 - OrderedTaskManager - Менеджер списка заданий, отсортированных по приоритету.
 
-## Описание пакета
+### Описание пакета
 Класс `TaskManager`, хранит список заданий и предоставляет функции для управления ими на основе протокола ITaskManager:
 
 - `func allTasks() -> [Task]` -- получение списка всех заданий;
@@ -38,7 +35,7 @@
 если в `medium`, то на последующий день, а если в `low`, то на третий день после текущей 
 (использован Calendar.current.date).
 
-## UML-схема 
+### UML-схема 
 
 ```plantuml
 @startuml
@@ -94,7 +91,7 @@ TaskManager -U-> Task
 
 
 
-# Getting Started
+## Getting Started
 
 - Клонируйте проект к себе на компьютер
 - В консоли запустите команду -> tuist generate
