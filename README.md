@@ -1,8 +1,8 @@
 ![Image alt](https://github.com/Pave1iOS/SeeFood/blob/main/image.png)
 
 <h2>Coloborations</h2>
-<h3><a href="https://github.com/Pave1iOS" target="_blank">Pavel | PaveliOS </a></h3>
-<h3><a href="https://github.com/PavelEmshanov" target="_blank">Pavel | PavelEmshanov </a></h3>
+<h5><a href="https://github.com/Pave1iOS" target="_blank">Pavel | PaveliOS </a></h5>
+<h5><a href="https://github.com/PavelEmshanov" target="_blank">Pavel | PavelEmshanov </a></h5>
 
 <h1 align="center">Описание проекта</h1>
 
