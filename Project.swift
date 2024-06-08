@@ -26,7 +26,6 @@ var swiftLintTargetScript: TargetScript {
 		 swiftlint
 		 else
 		 echo "warning: Swiftlint not installed, download from https://github.com/realm/SwiftLint"
-		 exit 1
 		 fi
 	"""
 	
@@ -43,8 +42,8 @@ let target = Target(
 	product: .app,
 	bundleId: "ru.paveldev.mdEditor",
 	infoPlist: .extendingDefault(with: infoPlist),
-	sources: ["Sources/**"]
-//	scripts: [swiftLintTargetScript]
+	sources: ["Sources/**"],
+	scripts: [swiftLintTargetScript]
 )
 
 // это дополнительные параметры втаргете,
