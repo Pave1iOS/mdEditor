@@ -44,6 +44,7 @@ let target = Target(
 	bundleId: "ru.paveldev.mdEditor",
 	infoPlist: .extendingDefault(with: infoPlist),
 	sources: ["Sources/**"]
+//	scripts: [swiftLintTargetScript]
 )
 
 // это дополнительные параметры втаргете,
