@@ -7,25 +7,21 @@
 <h3><a href="https://github.com/Pave1iOS" target="_blank">Pavel | PaveliOS </a></h3>
 <h3><a href="https://github.com/PavelEmshanov" target="_blank">Pavel | PavelEmshanov </a></h3>
 
+<h1>Описание проекта</h1>
 
-# TaskManagerPackage
-
-Пакет содержит набор классов для реализации списка заданий.
+# Overview
 
 Задания:
-
 - Task -- Задание, для ведения списка дел;
 - RegularTask -- Обычное задание для ведения списка дел;
 - ImportantTask -- Важное задание с приоритетом для ведения списка дел.
 
 Менеджеры списка заданий:
-
 - ITaskManager -- Протокол предоставляющий управление списком заданий;
 - TaskManager -- Менеджер списка заданий;
 - OrderedTaskManager - Менеджер списка заданий, отсортированных по приоритету.
 
 ## Описание пакета
-
 Класс `TaskManager`, хранит список заданий и предоставляет функции для управления ими на основе протокола ITaskManager:
 
 - `func allTasks() -> [Task]` -- получение списка всех заданий;
@@ -98,7 +94,7 @@ TaskManager -U-> Task
 
 
 
-#Getting Started
+# Getting Started
 
 - Клонируйте проект к себе на компьютер
 - В консоли запустите команду -> tuist generate
