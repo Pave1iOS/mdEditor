@@ -4,7 +4,7 @@
 <h3><a href="https://github.com/Pave1iOS" target="_blank">Pavel | PaveliOS </a></h3>
 <h3><a href="https://github.com/PavelEmshanov" target="_blank">Pavel | PavelEmshanov </a></h3>
 
-<h1>Описание проекта</h1>
+<h1 align="center">Описание проекта</h1>
 
 ## Overview
 
