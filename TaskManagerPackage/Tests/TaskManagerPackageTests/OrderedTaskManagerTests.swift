@@ -82,7 +82,7 @@ final class OrderedTaskManagerTests: XCTestCase {
 		XCTAssertFalse(uncompletedTask.isEmpty, "task is completed")
 	}
 	
-	func test_sorted() -> [Task] {
+	func test_sorted_sortByImportance() -> [Task] {
 		let tasks = sut.allTasks()
 		
 		return tasks.sorted {
