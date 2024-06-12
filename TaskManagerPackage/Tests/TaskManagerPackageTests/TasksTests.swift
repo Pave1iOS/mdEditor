@@ -11,6 +11,15 @@ final class TasksTests: XCTestCase {
 		sut = Task(title: "TestTask")
 	}
 	
-	func
+	func test_title_setTitleForTask() {
+		XCTAssertTrue(sut.title != "")
+	}
+	
+	func test_completed_setCompletedForTask() {
+		sut.completed = true
+		
+		XCTAssertTrue(sut.completed)
+	}
+	
 	
 }
