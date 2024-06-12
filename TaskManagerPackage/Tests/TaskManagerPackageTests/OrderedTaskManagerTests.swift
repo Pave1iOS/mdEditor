@@ -1,14 +1,16 @@
 import XCTest
 @testable import TaskManagerPackage
 
-final class TaskManagerTests: XCTestCase {
-	var sut: TaskManager!
+final class OrderedTaskManagerTests: XCTestCase {
 	var task: Task!
+	var taskManager: TaskManager!
+	var sut: OrderedTaskManager!
 	
 	override func setUp() {
 		super.setUp()
-		sut = TaskManager()
 		task = Task(title: "TestTask")
+		taskManager = TaskManager()
+		sut = OrderedTaskManager(taskManager: taskManager)
 	}
 	
 	// MARK: all task
@@ -16,7 +18,7 @@ final class TaskManagerTests: XCTestCase {
 		var allTask = sut.allTasks()
 		
 		allTask.append(task)
-						
+		
 		XCTAssertFalse(allTask.isEmpty, "array is empty")
 	}
 	
@@ -78,5 +80,19 @@ final class TaskManagerTests: XCTestCase {
 		let uncompletedTask = sut.uncompletedTasks()
 		
 		XCTAssertFalse(uncompletedTask.isEmpty, "task is completed")
+	}
+	
+	func test_sorted() -> [Task] {
+		let tasks = sut.allTasks()
+		
+		return tasks.sorted {
+			if let task0 = $0 as? ImportantTask, let task1 = $1 as? ImportantTask {
+				XCTAssertTrue(task0.taskPriority.rawValue > task1.taskPriority.rawValue, "tasks sorted incorrectly")
+			}
+			if $0 is ImportantTask, $1 is RegularTask {
+				return true
+			}
+			return false
+		}
 	}
 }
