@@ -1,23 +1,25 @@
 import Foundation
 
-/// Линейный однонаправленный список.
+/// Линейный двунаправленный список.
 struct DoubleLinkedList<T> {
 	
-	/// Узел линейного однонаправленного списка.
+	/// Узел линейного двунаправленного списка.
 	class Node<T> {
 		/// Значение, которое хранит узел.
 		var value: T
 		
+		/// Ссылка на предыдущий узел, если он есть.
 		var previous: Node<T>?
 		
 		/// Ссылка на следующий узел, если он есть.
 		var next: Node<T>?
 		
 		
-		/// Инициализатор узла линейного однонаправленного списка.
+		/// Инициализатор узла линейного двунаправленного списка.
 		/// - Parameters:
 		///   - value: Значение для хранения в узле;
-		///   - next: Ссылка на следующий узел, если он есть.
+		///   - next: Ссылка на следующий узел, если он есть;
+		///   - previous: Ссылка на предыдущий узел, если он есть.
 		init(_ value: T, previous: Node<T>? = nil, next: Node<T>? = nil) {
 			self.value = value
 			self.next = next
@@ -136,7 +138,6 @@ struct DoubleLinkedList<T> {
 		return currentTail.value
 	}
 	
-	// [previouseNode] <-> [currentNode] <-> [nextNode] <-> [?]
 	/// Извлечение значения из середины списка.
 	/// - Parameter index: Индекс, после которого надо извлеч значение.
 	/// - Returns: Извлеченное из списка значение.
@@ -167,7 +168,7 @@ private extension DoubleLinkedList {
 	/// Сложность O(n)
 	/// - Parameter index: Индекс, по которому нужно вернуть узел списка.
 	/// - Returns: Возвращаемый узел списка.
-	private func node(at index: Int) -> Node<T>? {
+	func node(at index: Int) -> Node<T>? {
 		var currentIndex = 0
 		var currentNode = head
 		
@@ -179,6 +180,10 @@ private extension DoubleLinkedList {
 		return currentNode
 	}
 	
+	/// Возвращает значение по указанному индексу
+	///
+	/// Сложность O(1)
+	/// - Parameter index: Индекс, по которому нужно вернуть узел списка.
 	func value(at index: Int) -> T?{
 		node(at: index)?.value
 	}
