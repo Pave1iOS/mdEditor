@@ -1,7 +1,7 @@
 import Foundation
 
 /// Линейный двунаправленный список.
-struct DoubleLinkedList<T> {
+struct DoubleLinkedList<Element> {
 	
 	/// Узел линейного двунаправленного списка.
 	class Node<T> {
@@ -27,8 +27,8 @@ struct DoubleLinkedList<T> {
 		}
 	}
 	
-	private var head: Node<T>?
-	private var tail: Node<T>?
+	private var head: Node<Element>?
+	private var tail: Node<Element>?
 	
 	/// Возвращает количество элементов списка.
 	///
@@ -45,7 +45,7 @@ struct DoubleLinkedList<T> {
 	
 	/// Инициализатор списка.
 	/// - Parameter value: Значение, которое будет добавлено в список.
-	init(value: T? = nil) {
+	init(value: Element? = nil) {
 		if let value = value {
 			let newNode = Node(value)
 			head = newNode
@@ -57,7 +57,7 @@ struct DoubleLinkedList<T> {
 	///
 	/// Сложность O(1).
 	/// - Parameter value: Значение, которое будет добавлено в список.
-	mutating func push(_ value: T) {
+	mutating func push(_ value: Element) {
 		let newNode = Node(value, next: head)
 		
 		head?.previous = newNode
@@ -75,7 +75,7 @@ struct DoubleLinkedList<T> {
 	///
 	/// Сложность O(1).
 	/// - Parameter value: Значение, которое будет добавлено в список.
-	mutating func append(_ value: T) {
+	mutating func append(_ value: Element) {
 		let newNode = Node(value, previous: tail)
 		
 		tail?.next = newNode
@@ -94,7 +94,7 @@ struct DoubleLinkedList<T> {
 	/// - Parameters:
 	///   - value: Значение, которое будет вставлено в список;
 	///   - index: Индекс, после которого будет вставлено значение.
-	mutating func insert(_ value: T, after index: Int) {
+	mutating func insert(_ value: Element, after index: Int) {
 		guard let currentNode = node(at: index) else { return }
 		
 		let nextNode = currentNode.next
@@ -111,7 +111,7 @@ struct DoubleLinkedList<T> {
 	///
 	/// Сложность O(1).
 	/// - Returns: Извлеченное из списка значение.
-	mutating func pop() -> T? {
+	mutating func pop() -> Element? {
 		guard let currentHead = head else { return nil }
 		
 		head = currentHead.next
@@ -126,7 +126,7 @@ struct DoubleLinkedList<T> {
 	///
 	/// Сложность O(1).
 	/// - Returns: Извлеченное из списка значение.
-	mutating func removeLast() -> T? {
+	mutating func removeLast() -> Element? {
 		guard let currentTail = tail else { return nil }
 		
 		tail = currentTail.previous
@@ -141,7 +141,7 @@ struct DoubleLinkedList<T> {
 	/// Извлечение значения из середины списка.
 	/// - Parameter index: Индекс, после которого надо извлеч значение.
 	/// - Returns: Извлеченное из списка значение.
-	mutating func remove(after index: Int) -> T? {
+	mutating func remove(after index: Int) -> Element? {
 		guard
 			let currentNode = node(at: index),
 			let nextNode = currentNode.next
@@ -168,7 +168,7 @@ private extension DoubleLinkedList {
 	/// Сложность O(n)
 	/// - Parameter index: Индекс, по которому нужно вернуть узел списка.
 	/// - Returns: Возвращаемый узел списка.
-	func node(at index: Int) -> Node<T>? {
+	func node(at index: Int) -> Node<Element>? {
 		var currentIndex = 0
 		var currentNode = head
 		
@@ -184,7 +184,7 @@ private extension DoubleLinkedList {
 	///
 	/// Сложность O(1)
 	/// - Parameter index: Индекс, по которому нужно вернуть узел списка.
-	func value(at index: Int) -> T?{
+	func value(at index: Int) -> Element?{
 		node(at: index)?.value
 	}
 }
