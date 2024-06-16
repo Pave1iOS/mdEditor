@@ -104,6 +104,3 @@ brew install tuist/tuist/tuist@3
 
 - Клонируйте проект к себе на компьютер
 - В консоли запустите команду -> tuist generate
-
-* если на компьютере нет tuist то установите его:
-brew install tuist/tuist/tuist@3.42.2
