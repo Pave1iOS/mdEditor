@@ -18,7 +18,20 @@
 - `mutating func removeLast() -> T?` -- извлечение значения c конца списка;
 - `mutating func remove(after index: Int) -> T?` -- извлечение значения из середины списка.
 
-Так же содержит переменные для корректировки списка и выставления значений:
+Инициализатор для списка:
+
+```
+init(value: T? = nil) {
+	if let value = value {
+		let newNode = Node(value)
+		head = newNode
+		tail = newNode
+		count = 1
+	}
+}
+```
+
+Так же содержит класс `Node` для корректировки списка и выставления значений:
 
 - `var value: T` -- Значение, которое хранит узел;
 - `var previous: Node<T>?` -- Ссылка на предыдущий узел, если он есть;
