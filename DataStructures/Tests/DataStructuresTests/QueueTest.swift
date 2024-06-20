@@ -37,7 +37,7 @@ final class QueueTest: XCTestCase {
 		XCTAssertTrue(sut.count == 0, "queue count != 0")
 	}
 	
-	func test_dequeue_addsEnElementToTheEndOfTheQueue() {
+	func test_enqueue_addsEnElementToTheEndOfTheQueue() {
 		sut.enqueue(100)
 		sut.enqueue(200)
 		

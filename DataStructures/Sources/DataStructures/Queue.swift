@@ -1,26 +1,26 @@
-struct Queue<T> {
+public struct Queue<T> {
 	
 	private var elements = [T]()
 	
 	/// Возвращает логическое значение, указывающее, пуста ли очередь.
-	var isEmpty: Bool {
+	public var isEmpty: Bool {
 		elements.isEmpty
 	}
 	
 	/// Возвращает количество элементов в очереди.
-	var count: Int {
+	public var count: Int {
 		elements.count
 	}
 	
 	/// Добавляет элемент в конец очереди.
 	/// - Parameter element: элемент для добавления в очередь.
-	mutating func enqueue(_ element: T) {
+	public mutating func enqueue(_ element: T) {
 		elements.append(element)
 	}
 	
 	/// Удаляет и возвращает первый элемент очереди.
 	/// - Returns: первый элемент очереди.
-	mutating func dequeue() -> T? {
+	public mutating func dequeue() -> T? {
 		guard !elements.isEmpty else {
 			return nil
 		}
@@ -28,7 +28,7 @@ struct Queue<T> {
 	}
 	
 	/// Возвращает первый элемент очереди.
-	var peek: T? {
+	public var peek: T? {
 		elements.first
 	}
 }

@@ -1,18 +1,18 @@
 import Foundation
 
 /// Линейный двунаправленный список.
-struct DoubleLinkedList<Element> {
+public struct DoubleLinkedList<Element> {
 	
 	/// Узел линейного двунаправленного списка.
-	class Node<T> {
+	internal class Node<T> {
 		/// Значение, которое хранит узел.
-		var value: T
+		internal var value: T
 		
 		/// Ссылка на предыдущий узел, если он есть.
-		var previous: Node<T>?
+		internal var previous: Node<T>?
 		
 		/// Ссылка на следующий узел, если он есть.
-		var next: Node<T>?
+		internal var next: Node<T>?
 		
 		
 		/// Инициализатор узла линейного двунаправленного списка.
@@ -20,7 +20,7 @@ struct DoubleLinkedList<Element> {
 		///   - value: Значение для хранения в узле;
 		///   - next: Ссылка на следующий узел, если он есть;
 		///   - previous: Ссылка на предыдущий узел, если он есть.
-		init(_ value: T, previous: Node<T>? = nil, next: Node<T>? = nil) {
+		internal init(_ value: T, previous: Node<T>? = nil, next: Node<T>? = nil) {
 			self.value = value
 			self.next = next
 			self.previous = previous
@@ -39,13 +39,13 @@ struct DoubleLinkedList<Element> {
 	
 	/// Возвращает логическое значение, определяющее, пуст ли список.
 	/// Сложность O(n).
-	var isEmpty: Bool {
+	public var isEmpty: Bool {
 		head == nil && tail == nil
 	}
 	
 	/// Инициализатор списка.
 	/// - Parameter value: Значение, которое будет добавлено в список.
-	init(value: Element? = nil) {
+	public init(value: Element? = nil) {
 		if let value = value {
 			let newNode = Node(value)
 			head = newNode
@@ -57,7 +57,7 @@ struct DoubleLinkedList<Element> {
 	///
 	/// Сложность O(1).
 	/// - Parameter value: Значение, которое будет добавлено в список.
-	mutating func push(_ value: Element) {
+	public mutating func push(_ value: Element) {
 		let newNode = Node(value, next: head)
 		
 		head?.previous = newNode
@@ -75,7 +75,7 @@ struct DoubleLinkedList<Element> {
 	///
 	/// Сложность O(1).
 	/// - Parameter value: Значение, которое будет добавлено в список.
-	mutating func append(_ value: Element) {
+	public mutating func append(_ value: Element) {
 		let newNode = Node(value, previous: tail)
 		
 		tail?.next = newNode
@@ -94,7 +94,7 @@ struct DoubleLinkedList<Element> {
 	/// - Parameters:
 	///   - value: Значение, которое будет вставлено в список;
 	///   - index: Индекс, после которого будет вставлено значение.
-	mutating func insert(_ value: Element, after index: Int) {
+	public mutating func insert(_ value: Element, after index: Int) {
 		guard let currentNode = node(at: index) else { return }
 		
 		let nextNode = currentNode.next
@@ -111,7 +111,7 @@ struct DoubleLinkedList<Element> {
 	///
 	/// Сложность O(1).
 	/// - Returns: Извлеченное из списка значение.
-	mutating func pop() -> Element? {
+	public mutating func pop() -> Element? {
 		guard let currentHead = head else { return nil }
 		
 		head = currentHead.next
@@ -126,7 +126,7 @@ struct DoubleLinkedList<Element> {
 	///
 	/// Сложность O(1).
 	/// - Returns: Извлеченное из списка значение.
-	mutating func removeLast() -> Element? {
+	public mutating func removeLast() -> Element? {
 		guard let currentTail = tail else { return nil }
 		
 		tail = currentTail.previous
@@ -141,7 +141,7 @@ struct DoubleLinkedList<Element> {
 	/// Извлечение значения из середины списка.
 	/// - Parameter index: Индекс, после которого надо извлеч значение.
 	/// - Returns: Извлеченное из списка значение.
-	mutating func remove(after index: Int) -> Element? {
+	public mutating func remove(after index: Int) -> Element? {
 		guard
 			let currentNode = node(at: index),
 			let nextNode = currentNode.next
@@ -190,13 +190,13 @@ private extension DoubleLinkedList {
 }
 
 extension DoubleLinkedList.Node: CustomStringConvertible {
-	var description: String {
+	public var description: String {
 		"\(value)"
 	}
 }
 
 extension DoubleLinkedList: CustomStringConvertible {
-	var description: String {
+	public var description: String {
 		var values = [String]()
 		var current = head
 		
