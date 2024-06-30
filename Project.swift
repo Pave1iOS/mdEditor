@@ -46,7 +46,7 @@ let target = Target(
 	scripts: [swiftLintTargetScript]
 )
 
-// это дополнительные параметры втаргете,
+// это дополнительные параметры в таргете,
 // помимо обязательных: name, destinations, product и bundleId
 //
 // infoPlist: extendingDefault(with: infoPlist),
