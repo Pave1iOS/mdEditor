@@ -46,26 +46,9 @@ var swiftLintTargetScript: TargetScript {
 	)
 }
 
-let target = Target(
-	name: ProjectSettings.projectName,
-	destinations: [.iPhone],
-	product: .app,
-	bundleId: ProjectSettings.bundleId,
-	infoPlist: .extendingDefault(with: infoPlist),
-	sources: ["Sources/Scenes/LoginScene/**",
-			  "Sources/Scenes/TodoListScene/**",
-			 "Sources/Coordinators/**",
-			  "Sources/Entities/**",
-			  "Sources/Theme/**"],
-	scripts: [swiftLintTargetScript],
-	dependencies: [
-		.package(product: "TaskManagerPackage"),
-		.package(product: "DataStructuresPackage")
-	]
-)
-
 let project = Project(
 	name: ProjectSettings.projectName,
+	organizationName: ProjectSettings.organizationName,
 	options: .options(
 		defaultKnownRegions: ["Eng", "Rus"],
 		developmentRegion: "Eng"
@@ -75,6 +58,30 @@ let project = Project(
 		.local(path: .relativeToManifest("../mdEditor/Packages/DataStructuresPackage"))
 	],
 	targets: [
-		target
+		
+		Target(
+			name: ProjectSettings.projectName,
+			destinations: [.iPhone],
+			product: .app,
+			bundleId: ProjectSettings.bundleId,
+			deploymentTargets: .iOS(ProjectSettings.targetVersion),
+			infoPlist: "../mdEditor/Environments/Info.plist",
+			sources: [
+				"Sources/Scenes/LoginScene/**",
+				"Sources/Scenes/TodoListScene/**",
+				"Sources/Coordinators/**",
+				"Sources/Entities/**",
+				"Sources/Theme/**",
+				"Sources/**",
+				"Packages/"
+			],
+			scripts: [
+				swiftLintTargetScript
+			],
+			dependencies: [
+				.package(product: "TaskManagerPackage"),
+				.package(product: "DataStructuresPackage")
+			]
+		)
 	]
 )

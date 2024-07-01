@@ -50,4 +50,3 @@ final class LoginCordinator: ILoginCordinator {
 		navigationController.present(alert, animated: true, completion: nil)
 	}
 }
-

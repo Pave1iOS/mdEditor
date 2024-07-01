@@ -24,18 +24,14 @@ final class TodoListAssembler {
 
 	// MARK: - Public methods
 
-	func assembly(todoListAddbuttonDidTapped: TodoListAddbuttonDidTapped?) -> TodoListViewController {
+	func assembly() -> TodoListViewController {
 		let viewController = TodoListViewController()
 //		let taskManager = taskManager
 		let sectionForTaskManagerAdapter = SectionForTaskManagerAdapter(taskManager: taskManager)
-		let presenter = TodoListPresenter(
-			viewController: viewController,
-			todoListAddbuttonDidTapped: todoListAddbuttonDidTapped
-		)
+		let presenter = TodoListPresenter(viewController: viewController)
 		let interactor = TodoListInteractor(presenter: presenter, sectionManager: sectionForTaskManagerAdapter)
 		viewController.interactor = interactor
 
 		return viewController
 	}
-
 }

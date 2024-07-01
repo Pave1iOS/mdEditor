@@ -146,4 +146,3 @@ private extension LoginViewController {
 		return view.bounds.size.height / 3.0
 	}
 }
-

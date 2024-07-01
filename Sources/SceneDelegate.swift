@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	var window: UIWindow?
 	// MARK: - Dependencies
 	private let taskManager = TaskManager()
-	private var appCoordinator: ICoordinator! //изначально объявила и инициализировала в функции
+	private var appCoordinator: ICoordinator! // swiftlint:disable:this implicitly_unwrapped_optional
 
 	// MARK: - Lifecycle
 	func scene(

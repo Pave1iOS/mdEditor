@@ -30,26 +30,12 @@ final class TodoListCoordinator: ICoordinator {
 	}
 
 	func showTodoListScene() {
-		let viewController = TodoListAssembler(taskManager: taskManager).assembly(
-			todoListAddbuttonDidTapped: handleTodoListAddbuttonDidTapped
-		)
+		let viewController = TodoListAssembler(repository: repository, taskManager: taskManager).assembly()
 		navigationController.setViewControllers([viewController], animated: true) //
 		// VIP Login остался в стеке вытесниkb при запуске главного флоу
 	}
-
-	func showCreateTaskScene() {
-		let viewController = CreateTaskAssembler(taskManager: taskManager).assembly(
-			createTaskButtonDidTapped: handleCreateTaskButtonDidTapped
-		)
-		navigationController.pushViewController(viewController, animated: true)
-	}
 	
 	// MARK: - Private methods
-
-	private func handleTodoListAddbuttonDidTapped() {
-		showCreateTaskScene()
-	}
-
 	private func handleCreateTaskButtonDidTapped() {
 		navigationController.popViewController(animated: true)
 	}

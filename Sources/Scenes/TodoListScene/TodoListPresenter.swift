@@ -1,23 +1,11 @@
-//
-//  TodoListPresenter.swift
-//  TodoList
-//
-//  Created by Kirill Leonov on 28.11.2023.
-//
-
 import Foundation
 import TaskManagerPackage
-
-typealias TodoListAddbuttonDidTapped = () -> Void
 
 protocol ITodoListPresenter {
 
 	/// Отображение экрана со списком заданий.
 	/// - Parameter response: Подготовленные к отображению данные.
 	func present(response: TodoListModel.Response)
-
-	/// Создание нового задания.
-	func createTask()
 }
 
 final class TodoListPresenter: ITodoListPresenter {
@@ -25,12 +13,10 @@ final class TodoListPresenter: ITodoListPresenter {
 	// MARK: - Dependencies
 
 	private weak var viewController: ITodoListViewController! // swiftlint:disable:this implicitly_unwrapped_optional
-	var todoListAddbuttonDidTapped: TodoListAddbuttonDidTapped?
 	// MARK: - Initialization
 
-	init(viewController: ITodoListViewController, todoListAddbuttonDidTapped: TodoListAddbuttonDidTapped?) {
+	init(viewController: ITodoListViewController) {
 		self.viewController = viewController
-		self.todoListAddbuttonDidTapped = todoListAddbuttonDidTapped
 	}
 
 	// MARK: - Public methods
@@ -45,10 +31,6 @@ final class TodoListPresenter: ITodoListPresenter {
 			sections.append(sectionData)
 		}
 		viewController.render(viewModel: TodoListModel.ViewModel(tasksBySections: sections))
-	}
-
-	func createTask() {
-		todoListAddbuttonDidTapped?()
 	}
 
 	// MARK: - Private methods
