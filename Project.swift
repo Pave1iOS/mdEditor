@@ -67,10 +67,6 @@ let project = Project(
 			deploymentTargets: .iOS(ProjectSettings.targetVersion),
 			infoPlist: "../mdEditor/Environments/Info.plist",
 			sources: [
-				"Sources/Scenes/**",
-				"Sources/Coordinators/**",
-				"Sources/Entities/**",
-				"Sources/Theme/**",
 				"Sources/**"
 			],
 			scripts: [
