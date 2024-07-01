@@ -30,7 +30,7 @@ final class TodoListCoordinator: ICoordinator {
 	}
 
 	func showTodoListScene() {
-		let viewController = TodoListAssembler(/*repository: repository, */taskManager: taskManager).assembly(
+		let viewController = TodoListAssembler(taskManager: taskManager).assembly(
 			todoListAddbuttonDidTapped: handleTodoListAddbuttonDidTapped
 		)
 		navigationController.setViewControllers([viewController], animated: true) //

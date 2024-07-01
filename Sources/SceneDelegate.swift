@@ -1,27 +1,47 @@
 //
 //  SceneDelegate.swift
-//  mdEditor
-//
-//  Created by Pavel Gribachev on 29.05.2024.
-//
 
 import UIKit
+import TaskManagerPackage
+protocol IAppFactory {
+	func makeKeyWindowWithCoordinator(scene: UIWindowScene) -> (UIWindow, ICoordinator)
+}
+
+extension IAppFactory {
+	func makeKeyWindowWithCoordinator(scene: UIWindowScene) -> (UIWindow, ICoordinator) {
+		let navigationController = UINavigationController()
+		navigationController.navigationBar.prefersLargeTitles = true
+
+		let window = UIWindow(windowScene: scene)
+		let coordinator = AppCoordinator(navigationController: navigationController)
+
+		window.rootViewController = navigationController
+		window.makeKeyAndVisible()
+
+		return (window, coordinator)
+	}
+}
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-	
+	// MARK: - Public properties
 	var window: UIWindow?
-	
+	// MARK: - Dependencies
+	private let taskManager = TaskManager()
+	private var appCoordinator: ICoordinator! //изначально объявила и инициализировала в функции
+
+	// MARK: - Lifecycle
 	func scene(
 		_ scene: UIScene,
 		willConnectTo session: UISceneSession,
 		options connectionOptions: UIScene.ConnectionOptions
 	) {
+
 		guard let scene = (scene as? UIWindowScene) else { return }
-		let window = UIWindow(windowScene: scene)
-		
-		window.rootViewController = ViewController()
-		
-		window.makeKeyAndVisible()
-		self.window = window
+		(window, appCoordinator) = makeKeyWindowWithCoordinator(scene: scene)
+
+		appCoordinator.start()
 	}
+}
+
+extension SceneDelegate: IAppFactory {
 }

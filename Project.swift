@@ -1,13 +1,14 @@
 import ProjectDescription
 
+// enum для настроек проекта
 enum ProjectSettings {
-	public static var organizationName: String { "leonovka.SwiftBook" }
+	public static var organizationName: String { "team.seefood" }
 	public static var projectName: String { "MdEditor" }
 	public static var appVersionName: String { "1.0.0" }
-	public static var appVersionBuild: Int { 1}
+	public static var appVersionBuild: Int { 1 }
 	public static var developmentTeam: String { "" }
-	public static var targetVersioh: String { "15.0" }
-	public static var bundleId: String { "\(organizationName). \(projectName)" }
+	public static var targetVersion: String { "15.0" }
+	public static var bundleId: String { "\(organizationName).\(projectName)" }
 }
 
 // внутри доп настройки info.plist для отказа от сториборда
@@ -28,7 +29,6 @@ let infoPlist: [String: Plist.Value] = [
 
 // внутри текст скрипта из первого урока
 // + создание скрипта с необходимыми настройками: имя, позиция, выключение опции
-
 var swiftLintTargetScript: TargetScript {
 	let swiftLintScriptString = """
 		 export PATH="$PATH:/opt/homebrew/bin"
@@ -47,12 +47,12 @@ var swiftLintTargetScript: TargetScript {
 }
 
 let target = Target(
-	name: "mdEditor",
+	name: ProjectSettings.projectName,
 	destinations: [.iPhone],
 	product: .app,
-	bundleId: "ru.liliyaAndreeva.mdEditor",
+	bundleId: ProjectSettings.bundleId,
 	infoPlist: .extendingDefault(with: infoPlist),
-	sources: ["Sources/Scenes/LoginScene**",
+	sources: ["Sources/Scenes/LoginScene/**",
 			  "Sources/Scenes/TodoListScene/**",
 			 "Sources/Coordinators/**",
 			  "Sources/Entities/**",
@@ -60,25 +60,21 @@ let target = Target(
 	scripts: [swiftLintTargetScript],
 	dependencies: [
 		.package(product: "TaskManagerPackage"),
-		.package(product: "DataStructures")
+		.package(product: "DataStructuresPackage")
 	]
 )
 
-
 let project = Project(
-	name: "mdEditor",
+	name: ProjectSettings.projectName,
 	options: .options(
 		defaultKnownRegions: ["Eng", "Rus"],
 		developmentRegion: "Eng"
 	),
 	packages: [
-		.local(path: ("/Users/liliaandreeva/Desktop/MdEditor/packges/TaskManagerPackage")),
-		.local(path: ("/Users/liliaandreeva/Desktop/MdEditor/packges/DataStructures"))
+		.local(path: .relativeToManifest("../mdEditor/Packages/TaskManagerPackage")),
+		.local(path: .relativeToManifest("../mdEditor/Packages/DataStructuresPackage"))
 	],
 	targets: [
 		target
 	]
 )
-
-
-
