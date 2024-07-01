@@ -54,8 +54,8 @@ let project = Project(
 		developmentRegion: "Eng"
 	),
 	packages: [
-		.local(path: .relativeToManifest("../mdEditor/Packages/TaskManagerPackage")),
-		.local(path: .relativeToManifest("../mdEditor/Packages/DataStructuresPackage"))
+		.local(path: .relativeToManifest("../Packages/TaskManagerPackage")),
+		.local(path: .relativeToManifest("../Packages/DataStructuresPackage"))
 	],
 	targets: [
 		
@@ -65,9 +65,12 @@ let project = Project(
 			product: .app,
 			bundleId: ProjectSettings.bundleId,
 			deploymentTargets: .iOS(ProjectSettings.targetVersion),
-			infoPlist: "../mdEditor/Environments/Info.plist",
+			infoPlist: "../Project/Environments/Info.plist",
 			sources: [
 				"Sources/**"
+			],
+			resources: [
+				"Resources/**"
 			],
 			scripts: [
 				swiftLintTargetScript
