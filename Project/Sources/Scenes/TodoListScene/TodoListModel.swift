@@ -8,7 +8,8 @@
 
 import Foundation
 import TaskManagerPackage
-
+// swiftlint:disable:next blanket_disable_command
+// swiftlint:disable nesting
 enum TodoListModel {
 
 	enum Request {

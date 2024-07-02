@@ -38,7 +38,7 @@ var swiftLintTargetScript: TargetScript {
 		 echo "warning: Swiftlint not installed, download from https://github.com/realm/SwiftLint"
 		 fi
 	"""
-	
+
 	return TargetScript.pre(
 		script: swiftLintScriptString,
 		name: "Run SwiftLint",
@@ -58,7 +58,7 @@ let project = Project(
 		.local(path: .relativeToManifest("../Packages/DataStructuresPackage"))
 	],
 	targets: [
-		
+
 		Target(
 			name: ProjectSettings.projectName,
 			destinations: [.iPhone],
@@ -67,11 +67,10 @@ let project = Project(
 			deploymentTargets: .iOS(ProjectSettings.targetVersion),
 			infoPlist: "../Project/Environments/Info.plist",
 			sources: [
-				"Sources/**"
-			],
-			resources: [
+				"Sources/**",
 				"Resources/**"
 			],
+
 			scripts: [
 				swiftLintTargetScript
 			],

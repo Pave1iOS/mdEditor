@@ -16,7 +16,7 @@ final class TodoListCoordinator: ICoordinator {
 	var navigationController: UINavigationController
 	private let taskManager: ITaskManager = OrderedTaskManager(taskManager: TaskManager())
 	private let repository: ITaskRepository = TaskRepositoryStub()
-	
+
 	// MARK: - Initialization
 	internal init(navigationController: UINavigationController) {
 		self.navigationController = navigationController
@@ -34,7 +34,7 @@ final class TodoListCoordinator: ICoordinator {
 		navigationController.setViewControllers([viewController], animated: true) //
 		// VIP Login остался в стеке вытесниkb при запуске главного флоу
 	}
-	
+
 	// MARK: - Private methods
 	private func handleCreateTaskButtonDidTapped() {
 		navigationController.popViewController(animated: true)

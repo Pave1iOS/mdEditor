@@ -20,7 +20,7 @@ final class LoginCordinator: ILoginCordinator {
 	internal init(navigationController: UINavigationController) {
 		self.navigationController = navigationController
 	}
-	
+
 	// MARK: - Public methods
 
 	func start() {
@@ -30,9 +30,9 @@ final class LoginCordinator: ILoginCordinator {
 		let viewController = LoginAssembler().assembly(loginResutClousure: handleLoginResult)
 		navigationController.pushViewController(viewController, animated: true)
 	}
-	
+
 	// MARK: - Private methods
-	
+
 	private func handleLoginResult(result: Result<Void, LoginError>) {
 		switch result {
 		case .success:
@@ -41,7 +41,7 @@ final class LoginCordinator: ILoginCordinator {
 			showError(message: error.localizedDescription)
 		}
 	}
-	
+
 	func showError(message: String) {
 		let alert: UIAlertController
 		alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
