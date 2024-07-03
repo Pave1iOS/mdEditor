@@ -88,6 +88,7 @@ private extension TodoListViewController {
 
 	private func setupUI() {
 		title = "TodoList"
+		view.backgroundColor = Theme.backgroundColor
 		navigationItem.setHidesBackButton(true, animated: true)
 		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 	}
@@ -101,12 +102,9 @@ private extension TodoListViewController {
 	func configureCell(_ cell: UITableViewCell, with task: TodoListModel.ViewModel.Task) {
 		var contentConfiguration = cell.defaultContentConfiguration()
 
-		cell.tintColor = .red
-		cell.selectionStyle = .none
-
 		switch task {
 		case .importantTask(let task):
-			let redText = [NSAttributedString.Key.foregroundColor: UIColor.red]
+			let redText = [NSAttributedString.Key.foregroundColor: Theme.accentColor]
 			let taskText = NSMutableAttributedString(string: task.priority + " ", attributes: redText )
 			taskText.append(NSAttributedString(string: task.title))
 
@@ -117,6 +115,15 @@ private extension TodoListViewController {
 			contentConfiguration.text = task.title
 			cell.accessoryType = task.completed ? .checkmark : .none
 		}
+
+		cell.tintColor = Theme.accentColor
+		cell.backgroundColor = Theme.backgroundColor
+		cell.selectionStyle = .none
+
+		contentConfiguration.secondaryTextProperties.font = UIFont.preferredFont(forTextStyle: .body)
+		contentConfiguration.secondaryTextProperties.adjustsFontForContentSizeCategory = true
+		contentConfiguration.textProperties.font = UIFont.preferredFont(forTextStyle: .body)
+		contentConfiguration.textProperties.adjustsFontForContentSizeCategory = true
 
 		cell.contentConfiguration = contentConfiguration
 	}

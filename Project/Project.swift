@@ -68,9 +68,9 @@ let project = Project(
 			infoPlist: "../Project/Environments/Info.plist",
 			sources: [
 				"Sources/**",
-				"Resources/**"
+				"Resources/**",
+				"AppIcons/**"
 			],
-
 			scripts: [
 				swiftLintTargetScript
 			],
