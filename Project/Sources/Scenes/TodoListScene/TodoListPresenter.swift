@@ -47,7 +47,7 @@ final class TodoListPresenter: ITodoListPresenter {
 			let result = TodoListModel.ViewModel.ImportantTask(
 				title: task.title,
 				completed: task.completed,
-				deadLine: "Deadline: \(task.deadLine)",
+				deadLine: "\(L10n.deadline): \(task.deadLine)",
 				priority: "\(task.taskPriority)"
 			)
 			return .importantTask(result)
