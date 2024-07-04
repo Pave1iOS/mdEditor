@@ -1,0 +1,21 @@
+// MARK: - Login Scene
+"Authorization" = "Authorization";
+"LoginButton" = "Login";
+"Password" = "Password";
+"LoginTextField" = "Login";
+// MARK: - Login Scene
+"TodoListTitle" = " TodoList";
+// MARK: - Task
+"Completed" = "Completed";
+"Uncompleted" = "Uncompleted";
+"All" = "All";
+"Regular" = "Regular";
+"Important" = "Important";
+// MARK: - Task property
+"Deadline" = "Deadline";
+// MARK: - MOCK data
+"MOCK_doHomework" = "Do homework";
+"MOCK_doWorkout" = "Do Workout 💪";
+"MOCK_writeNewTasks" = "Write new tasks";
+"MOCK_solve3algorithms" = "Solve 3 algorithms 🧠";
+"MOCK_goShopping" = "Go shopping";
