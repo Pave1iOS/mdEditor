@@ -71,7 +71,8 @@ let project = Project(
 				"Resources/**"
 			],
 			resources: [
-				"Localization/**"
+				"Localization/**",
+				"SupportingFiles/**"
 			],
 			scripts: [
 				swiftLintTargetScript
