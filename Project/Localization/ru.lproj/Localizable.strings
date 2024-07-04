@@ -1,0 +1,21 @@
+// MARK: - Login Scene
+"Authorization" = "Авторизация";
+"LoginButton" = "Вход";
+"Password" = "Пароль";
+"LoginTextField" = "Имя пользователя";
+// MARK: - Login Scene
+"TodoListTitle" = "Задачи";
+// MARK: - Task
+"Completed" = "Выполненные";
+"Uncompleted" = "Не выполненные";
+"All" = "Все";
+"Regular" = "Регулярные";
+"Important" = "Важные";
+// MARK: - Task property
+"Deadline" = "Выполнить до";
+// MARK: - MOCK data
+"MOCK_doHomework" = "Сделать работу по дому";
+"MOCK_doWorkout" = "Потренироваться 💪";
+"MOCK_writeNewTasks" = "Написать новую задачу";
+"MOCK_solve3algorithms" = "Решить 3 алгоритма 🧠";
+"MOCK_goShopping" = "Сходить в магазин";

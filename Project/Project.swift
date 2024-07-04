@@ -70,7 +70,9 @@ let project = Project(
 				"Sources/**",
 				"Resources/**"
 			],
-
+			resources: [
+				"Localization/**"
+			],
 			scripts: [
 				swiftLintTargetScript
 			],
