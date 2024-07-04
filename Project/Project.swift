@@ -68,8 +68,7 @@ let project = Project(
 			infoPlist: "../Project/Environments/Info.plist",
 			sources: [
 				"Sources/**",
-				"Resources/**",
-				"AppIcons/**"
+				"Resources/**"
 			],
 			resources: [
 				"Localization/**",
