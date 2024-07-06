@@ -36,15 +36,15 @@ enum Section {
 	var title: String {
 		switch self {
 		case .completed:
-			return L10n.completed
+			return L10n.Section.Title.completed
 		case .uncompleted:
-			return L10n.uncompleted
+			return L10n.Section.Title.uncompleted
 		case .allTasks:
-			return L10n.all
+			return L10n.Section.Title.all
 		case .important:
-			return L10n.important
+			return L10n.Section.Title.important
 		case .regular:
-			return L10n.regular
+			return L10n.Section.Title.regular
 		}
 	}
 }

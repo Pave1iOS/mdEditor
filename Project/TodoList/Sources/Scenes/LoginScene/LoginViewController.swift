@@ -92,7 +92,7 @@ private extension LoginViewController {
 		button.configuration = .filled()
 		button.configuration?.cornerStyle = .medium
 		button.configuration?.baseBackgroundColor = Theme.accentColor
-		button.configuration?.title = L10n.loginButton
+		button.configuration?.title = L10n.ButtonLogin.title
 		button.addTarget(self, action: #selector(login), for: .touchUpInside)
 		button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
 		button.titleLabel?.adjustsFontForContentSizeCategory = true
@@ -104,12 +104,12 @@ private extension LoginViewController {
 
 	func setupUI() {
 		view.backgroundColor = Theme.backgroundColor
-		title = L10n.authorization
+		title = L10n.LoginViewController.title
 		navigationController?.navigationBar.prefersLargeTitles = true
 
 		// Кастомная конфигурация наших полей
-		textFieldLogin.placeholder = L10n.loginTextField
-		textFieldPass.placeholder = L10n.password
+		textFieldLogin.placeholder = L10n.TextFieldLogin.placeholder
+		textFieldPass.placeholder = L10n.TextFieldPass.placeholder
 		textFieldPass.isSecureTextEntry = true
 
 		view.addSubview(textFieldLogin)

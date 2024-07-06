@@ -37,13 +37,13 @@ extension LoginError: LocalizedError {
 	var errorDescription: String? {
 		switch self {
 		case .wrongPassword:
-			return Strings.wrongPassword
+			return L10n.LoginError.wrongPassword
 		case .wrongLogin:
-			return Strings.wrongLogin
+			return L10n.LoginError.wrongLogin
 		case .emptyFields:
-			return Strings.emptyFields
+			return L10n.LoginError.emptyFields
 		case .errorAuth:
-			return Strings.errorAuth
+			return L10n.LoginError.errorAuth
 		}
 	}
 }

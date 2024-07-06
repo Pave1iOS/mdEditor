@@ -23,11 +23,11 @@ final class TaskRepositoryStub: ITaskRepository {
 	/// - Returns: Массив заданий.
 	func getTasks() -> [Task] {
 		[
-			ImportantTask(title: L10n.mockDoHomework, taskPriority: .high),
-			RegularTask(title: L10n.mockDoWorkout, completed: true),
-			ImportantTask(title: L10n.mockWriteNewTasks, taskPriority: .low),
-			RegularTask(title: L10n.mockSolve3algorithms),
-			ImportantTask(title: L10n.mockGoShopping, taskPriority: .medium)
+			ImportantTask(title: L10n.Mock.doHomework, taskPriority: .high),
+			RegularTask(title: L10n.Mock.doWorkout, completed: true),
+			ImportantTask(title: L10n.Mock.writeNewTasks, taskPriority: .low),
+			RegularTask(title: L10n.Mock.solve3algorithms),
+			ImportantTask(title: L10n.Mock.goShopping, taskPriority: .medium)
 		]
 	}
 }
