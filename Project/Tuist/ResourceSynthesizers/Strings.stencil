@@ -70,6 +70,7 @@ import Foundation
   //#{% else %}
     {% call recursiveBlock tables.first.name tables.first.levels %}
   //#{% endif %}
+
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

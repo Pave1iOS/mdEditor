@@ -106,7 +106,7 @@
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
 {{accessModifier}} extension {{imageAlias}} {
-  @available(iOS 1.0, tvOS 1.0, watchOS 1.0, *)
+  @available(iOS 11.0, tvOS 11.0, watchOS 4.0, *)
   @available(OSX, deprecated,
     message: "This initializer is unsafe on macOS, please use the {{imageType}}.image property")
   convenience init!(asset: {{imageType}}) {
@@ -139,3 +139,5 @@ private final class BundleToken {}
 {% else %}
 // No assets found
 {% endif %}
+
+// swiftlint:enable superfluous_disable_command file_length
