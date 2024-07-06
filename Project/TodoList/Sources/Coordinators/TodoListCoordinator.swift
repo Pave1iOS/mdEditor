@@ -10,8 +10,6 @@ import TaskManagerPackage
 
 final class TodoListCoordinator: ICoordinator {
 
-	// MARK: - Public properties
-	var childCoordinators: [ICoordinator] = []
 	// MARK: - Dependencies
 	var navigationController: UINavigationController
 	private let taskManager: ITaskManager = OrderedTaskManager(taskManager: TaskManager())
@@ -31,8 +29,7 @@ final class TodoListCoordinator: ICoordinator {
 
 	func showTodoListScene() {
 		let viewController = TodoListAssembler(repository: repository, taskManager: taskManager).assembly()
-		navigationController.setViewControllers([viewController], animated: true) //
-		// VIP Login остался в стеке вытесниkb при запуске главного флоу
+		navigationController.setViewControllers([viewController], animated: true)
 	}
 
 	// MARK: - Private methods

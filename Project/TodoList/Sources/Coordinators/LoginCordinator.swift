@@ -44,8 +44,8 @@ final class LoginCordinator: ILoginCordinator {
 
 	func showError(message: String) {
 		let alert: UIAlertController
-		alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertController.Style.alert)
-		let action = UIAlertAction(title: "Ok", style: .default)
+		alert = UIAlertController(title: Strings.error, message: message, preferredStyle: UIAlertController.Style.alert)
+		let action = UIAlertAction(title: Strings.ok, style: .default)
 		alert.addAction(action)
 		navigationController.present(alert, animated: true, completion: nil)
 	}

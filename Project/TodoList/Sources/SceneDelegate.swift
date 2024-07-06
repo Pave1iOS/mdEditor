@@ -18,10 +18,6 @@ extension IAppFactory {
 		window.rootViewController = navigationController
 		window.makeKeyAndVisible()
 
-		if #available(iOS 13.0, *) {
-			window.overrideUserInterfaceStyle = .dark
-		}
-
 		return (window, coordinator)
 	}
 }
@@ -30,7 +26,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	// MARK: - Public properties
 	var window: UIWindow?
 	// MARK: - Dependencies
-	private let taskManager = TaskManager()
 	private var appCoordinator: ICoordinator! // swiftlint:disable:this implicitly_unwrapped_optional
 
 	// MARK: - Lifecycle

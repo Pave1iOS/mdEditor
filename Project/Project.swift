@@ -9,6 +9,7 @@ enum ProjectSettings {
 	public static var developmentTeam: String { "" }
 	public static var targetVersion: String { "15.0" }
 	public static var bundleId: String { "\(organizationName).\(projectName)" }
+	public static var uiTestsName: String { "TodoListUITest" }
 }
 
 // внутри доп настройки info.plist для отказа от сториборда
@@ -50,13 +51,22 @@ let project = Project(
 	name: ProjectSettings.projectName,
 	organizationName: ProjectSettings.organizationName,
 	options: .options(
-		defaultKnownRegions: ["Eng", "Rus"],
-		developmentRegion: "Eng"
+		defaultKnownRegions: ["Base", "ru"],
+		developmentRegion: "Base"
 	),
 	packages: [
 		.local(path: .relativeToManifest("../Packages/TaskManagerPackage")),
 		.local(path: .relativeToManifest("../Packages/DataStructuresPackage"))
 	],
+	settings: .settings(
+		base: [
+			"DEVELOPMENT_TEAM": "\(ProjectSettings.developmentTeam)",
+			"MARKETING_VERSION": "\(ProjectSettings.appVersionName)",
+			"CURRENT_PROJECT_VERSION": "\(ProjectSettings.appVersionBuild)",
+			"DEBUG_INFORMATION_FORMAT": "dwarf-with-dsym"
+		],
+		defaultSettings: .recommended()
+	),
 	targets: [
 
 		Target(
@@ -65,14 +75,12 @@ let project = Project(
 			product: .app,
 			bundleId: ProjectSettings.bundleId,
 			deploymentTargets: .iOS(ProjectSettings.targetVersion),
-			infoPlist: "../Project/Environments/Info.plist",
+			infoPlist: .extendingDefault(with: infoPlist),
 			sources: [
-				"Sources/**",
-				"Resources/**"
+				"TodoList/Sources/**"
 			],
 			resources: [
-				"Localization/**",
-				"SupportingFiles/**"
+				"TodoList/Resources/**"
 			],
 			scripts: [
 				swiftLintTargetScript

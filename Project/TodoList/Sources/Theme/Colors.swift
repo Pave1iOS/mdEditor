@@ -69,7 +69,6 @@ enum Theme {
 	static let mainColor = Colors.dark
 	static let accentColor = Colors.red
 	static let backgroundColor = Colors.light
-	static let lightAccent = Colors.dark
 
 	static let white = Colors.white
 	static let black = Colors.black

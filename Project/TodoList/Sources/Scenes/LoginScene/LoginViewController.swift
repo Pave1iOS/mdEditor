@@ -70,7 +70,8 @@ private extension LoginViewController {
 		let textField = UITextField()
 
 		textField.backgroundColor = Theme.backgroundColor
-		textField.textColor = Theme.black
+		textField.textColor = Theme.mainColor
+		textField.layer.borderColor = Theme.black.cgColor
 		textField.layer.borderWidth = Sizes.borderWidth
 		textField.layer.cornerRadius = Sizes.cornerRadius
 		textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: Sizes.Padding.half, height: textField.frame.height))
