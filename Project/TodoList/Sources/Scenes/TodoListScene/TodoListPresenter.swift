@@ -47,7 +47,7 @@ final class TodoListPresenter: ITodoListPresenter {
 			let result = TodoListModel.ViewModel.ImportantTask(
 				title: task.title,
 				completed: task.completed,
-				deadLine: "\(L10n.ImportantTask.deadline): \(task.deadLine)",
+				deadLine: "\(L10n.ImportantTask.deadline): \(dateFormat(task.deadLine))",
 				priority: "\(task.taskPriority)"
 			)
 			return .importantTask(result)
@@ -59,5 +59,11 @@ final class TodoListPresenter: ITodoListPresenter {
 				)
 			)
 		}
+	}
+
+	private func dateFormat(_ date: Date) -> String {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "EEEE, d MMM"
+		return formatter.string(from: date)
 	}
 }
