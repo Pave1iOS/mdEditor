@@ -1,21 +1,28 @@
 // MARK: - Login Scene
-"Authorization" = "Authorization";
-"LoginButton" = "Login";
-"Password" = "Password";
-"LoginTextField" = "Login";
+"loginViewController.title" = "Authorization";
+"buttonLogin.title" = "Login";
+"textFieldPass.placeholder" = "Password";
+"textFieldLogin.placeholder" = "Login";
 // MARK: - Login Scene
-"TodoListTitle" = " TodoList";
+"todoListViewController.title" = " TodoList";
 // MARK: - Task
-"Completed" = "Completed";
-"Uncompleted" = "Uncompleted";
-"All" = "All";
-"Regular" = "Regular";
-"Important" = "Important";
+"section.title.completed" = "Completed";
+"section.title.uncompleted" = "Uncompleted";
+"section.title.all" = "All";
+"section.title.regular" = "Regular";
+"section.title.important" = "Important";
 // MARK: - Task property
-"Deadline" = "Deadline";
+"importantTask.deadline" = "Deadline";
 // MARK: - MOCK data
-"MOCK_doHomework" = "Do homework";
-"MOCK_doWorkout" = "Do Workout 💪";
-"MOCK_writeNewTasks" = "Write new tasks";
-"MOCK_solve3algorithms" = "Solve 3 algorithms 🧠";
-"MOCK_goShopping" = "Go shopping";
+"MOCK.doHomework" = "Do homework";
+"MOCK.doWorkout" = "Do Workout 💪";
+"MOCK.writeNewTasks" = "Write new tasks";
+"MOCK.solve3algorithms" = "Solve 3 algorithms 🧠";
+"MOCK.goShopping" = "Go shopping";
+// MARK: - LoginSceneError
+"loginError.wrongPassword" = "Wrong Password.";
+"loginError.wrongLogin" = "Wrong Login.";
+"loginError.emptyFields" = "Empty Fields.";
+"loginError.errorAuth" = "Error authorization.";
+"loginError.error" = "Error.";
+"loginError.ok" = "OK.";
