@@ -42,6 +42,7 @@ final class LoginViewController: UIViewController, ILoginViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupUI()
+		changeBorderColorWithTextField()
 	}
 
 	override func viewDidLayoutSubviews() {
@@ -115,6 +116,28 @@ private extension LoginViewController {
 		view.addSubview(textFieldLogin)
 		view.addSubview(textFieldPass)
 		view.addSubview(buttonLogin)
+	}
+
+	// Смена цветов border у textField при смене темы
+	func changeBorderColorWithTextField() {
+
+		if #available(iOS 17.0, *) {
+			registerForTraitChanges(
+				[UITraitUserInterfaceStyle.self],
+				handler: { (self: Self, _: UITraitCollection) in
+				if self.traitCollection.userInterfaceStyle == .light {
+					self.textFieldLogin.layer.borderColor = Theme.black.cgColor
+					self.textFieldPass.layer.borderColor = Theme.black.cgColor
+				} else {
+					self.textFieldLogin.layer.borderColor = Theme.black.cgColor
+					self.textFieldPass.layer.borderColor = Theme.black.cgColor
+				}
+			})
+		} else {
+			self.textFieldLogin.layer.borderColor = Theme.black.cgColor
+			self.textFieldPass.layer.borderColor = Theme.black.cgColor
+		}
+
 	}
 }
 
