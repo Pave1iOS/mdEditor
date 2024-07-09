@@ -95,10 +95,11 @@ let project = Project(
 			name: ProjectSettings.uiTestsName,
 			destinations: [.iPhone],
 			product: .uiTests,
-			bundleId: "\(ProjectSettings.bundleId).TodoListUITests",
+			bundleId: "\(ProjectSettings.bundleId).\(ProjectSettings.uiTestsName)",
 			deploymentTargets: .iOS(ProjectSettings.targetVersion),
 			sources: [
-				"TodoListUITests/Sources/**", "TodoList/Shared/**"
+				"TodoListUITests/Sources/**",
+				"TodoList/Shared/**"
 			],
 			dependencies: [
 				.target(name: ProjectSettings.projectName)
