@@ -16,8 +16,6 @@ final class LoginSceneUITest: XCTestCase {
 		app.launch()
 	}
 
-	// Тесты на основе ScreenObject. Самая краткая и удобочитаемая версия тестов.
-	// Основное взаимодействие с поиском элементов вынесено в ScreenObject, в тестах только тестирование.
 	func test3_login_withValidCred_mustBeSuccess() {
 
 		loginScreen
