@@ -100,6 +100,7 @@ let project = Project(
 			sources: [
 				"TodoListUITests/Sources/**", "TodoList/Shared/**"
 			],
+			resources: "TodoList/Resources/**",
 			dependencies: [
 				.target(name: ProjectSettings.projectName)
 			]

@@ -63,6 +63,23 @@ class BaseScreenObject {
 
 		return self
 	}
+
+	@discardableResult
+	func checkAlertAndClose() -> Self {
+		assert(alert, [.exists])
+		assert(alertButton, [.exists])
+		tap(alertButton)
+		assert(alert, [.doesNotExist])
+
+		return self
+	}
+	@discardableResult
+	func test_navigationBar_existsAndHasTitle(text: String) -> Self {
+		assert(navigationBar, [.exists])
+		assert(navigationBarTitle, [.exists])
+		assert(navigationBarTitle, [.contains(text)])
+		return self
+	}
 }
 
 // MARK: - Keyboard

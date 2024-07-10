@@ -12,13 +12,14 @@ final class LoginScreenObject: BaseScreenObject {
 	// MARK: - Private properties
 
 	private lazy var textFieldLogin = app.textFields[AccessibilityIdentifier.textFieldLogin]
-	private lazy var textFieldPass = app.textFields[AccessibilityIdentifier.textFieldPass]
+	private lazy var textFieldPass = app.secureTextFields[AccessibilityIdentifier.textFieldPass]
 	private lazy var loginButton = app.buttons[AccessibilityIdentifier.buttonLogin]
 
 	// MARK: - ScreenObject Methods
 
 	@discardableResult
 	func isLoginScreen() -> Self {
+		test_navigationBar_existsAndHasTitle(text: L10n.LoginViewController.title)
 		assert(textFieldLogin, [.exists])
 		assert(textFieldPass, [.exists])
 		assert(loginButton, [.exists])
