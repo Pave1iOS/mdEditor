@@ -33,6 +33,8 @@ final class TodoListScreenObject: BaseScreenObject {
 		matching: .cell,
 		identifier: AccessibilityIdentifier.cellGoShopping
 	)
+	
+	private var appLanguage = LaunchArguments.Language.english
 
 	// MARK: - ScreenObject Methods
 
@@ -56,10 +58,15 @@ final class TodoListScreenObject: BaseScreenObject {
 	}
 	
 	@discardableResult
-	func displayTaskInformation() -> Self {
-		cellDoHomework.tap()
+	func displayTaskInformation() -> XCUIElement {
+
+		let taskInformation: String = appLanguage == .russian
+		? "Deadline"
+		: "Выполнить до"
 		
-		return self
+		
+		
+		return app.tables.staticTexts[taskInformation]
 	}
 	
 	@discardableResult
@@ -101,6 +108,7 @@ final class TodoListScreenObject: BaseScreenObject {
 private extension TodoListScreenObject {
 	/// Смена языка приложения
 	func setLanguage(_ language: LaunchArguments.Language, app: XCUIApplication) {
+		appLanguage = language
 		app.launchArguments += [LaunchArguments.appleLanguages, "(\(language))"]
 	}
 	

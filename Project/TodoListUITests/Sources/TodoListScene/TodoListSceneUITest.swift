@@ -49,16 +49,31 @@ final class TodoListSceneUITest: XCTestCase {
 	
 	// MARK: - Task Description
 	
-	func test_taskInformation_display() {
+	func test_taskInformation_displayRU() {
 		
-		let app = XCUIApplication()
-		app/*@START_MENU_TOKEN@*/.buttons["LoginViewController.buttonLogin"]/*[[".buttons[\"Вход\"]",".buttons[\"LoginViewController.buttonLogin\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+		todoListScreen
+			.launchApp(inLanguage: .russian)
 		
-		let todolistviewcontrollerTableviewTable = app.tables["TodoListViewController.tableView"]
-		todolistviewcontrollerTableviewTable/*@START_MENU_TOKEN@*/.staticTexts["Выполнить до: суббота, 13 июля"]/*[[".cells[\"cell.[0, 0]\"].staticTexts[\"Выполнить до: суббота, 13 июля\"]",".staticTexts[\"Выполнить до: суббота, 13 июля\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-		todolistviewcontrollerTableviewTable/*@START_MENU_TOKEN@*/.staticTexts["Выполнить до: понедельник, 15 июля"]/*[[".cells[\"cell.[0, 1]\"].staticTexts[\"Выполнить до: понедельник, 15 июля\"]",".staticTexts[\"Выполнить до: понедельник, 15 июля\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-		todolistviewcontrollerTableviewTable/*@START_MENU_TOKEN@*/.staticTexts["Выполнить до: воскресенье, 14 июля"]/*[[".cells[\"cell.[0, 0]\"].staticTexts[\"Выполнить до: воскресенье, 14 июля\"]",".staticTexts[\"Выполнить до: воскресенье, 14 июля\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-								
+		let date = dateFormat(getDate())
+		let result = app.tables.staticTexts["Выполнить до: \(date)"]
+		
+		XCTAssertTrue(result.exists)
+	}
+	
+	private func getDate() -> Date {
+		Calendar.current.date(byAdding: .day, value: 2, to: Date())!
+	}
+	
+	private func dateFormat(_ date: Date) -> String {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "EEEE, d MMM"
+		return formatter.string(from: date)
+	}
+	
+	// MARK: Completed Task
+	
+	func test_completedTask_swipeToSection() {
+		
 	}
 	
 	
