@@ -11,7 +11,7 @@ final class LoginAssembler {
 	func assembly(loginResutClousure: LoginResutClousure?) -> LoginViewController {
 		let viewController = LoginViewController()
 		let presenter = LoginPresenter(viewController: viewController, loginResutClousure: loginResutClousure)
-		let worker = LoginWorker()
+		let worker = StubLoginWorker()
 		let interactor = LoginInteractor(presenter: presenter, worker: worker)
 		viewController.interactor = interactor
 		return viewController

@@ -74,6 +74,7 @@ extension TodoListViewController {
 		let task = getTaskForIndex(indexPath)
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 		configureCell(cell, with: task)
+		cell.accessibilityIdentifier = "cell.\(indexPath)"
 		return cell
 	}
 
@@ -91,6 +92,9 @@ private extension TodoListViewController {
 		view.backgroundColor = Theme.backgroundColor
 		navigationItem.setHidesBackButton(true, animated: true)
 		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+
+		// accessibilityIdentifier для таблицы
+		tableView.accessibilityIdentifier = "TodoListViewController.tableView"
 	}
 
 	func getTaskForIndex(_ indexPath: IndexPath) -> TodoListModel.ViewModel.Task {

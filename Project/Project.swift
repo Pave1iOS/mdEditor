@@ -99,7 +99,9 @@ let project = Project(
 			deploymentTargets: .iOS(ProjectSettings.targetVersion),
 			sources: [
 				"TodoListUITests/Sources/**",
-				"TodoList/Shared/**"
+				"TodoList/Shared/**",
+				"Derived/Sources/**",
+				"TodoList/Resources/Localization/**"
 			],
 			dependencies: [
 				.target(name: ProjectSettings.projectName)
