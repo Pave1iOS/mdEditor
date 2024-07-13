@@ -35,6 +35,6 @@ final class TodoListSceneUITest: XCTestCase {
 	func test_section_sectionTitle() {
 		todoListScreen
 			.startTodoListScreen()
-			.check(sectionTitle: L10n.Section.Title.uncompleted.description, andSection: 0)
+			.check(sectionTitle: L10n.Section.Title.uncompleted, andSection: 0)
 	}
 }
