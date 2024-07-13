@@ -62,7 +62,11 @@ extension TodoListViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		viewModel.tasksBySections[section].title
+		// accessibilityIdentifier для секции
+		let tableSection = tableView.headerView(forSection: section)
+		tableSection?.accessibilityIdentifier = AccessibilityIdentifier.ToDoListScene.section(section).description
+
+		return viewModel.tasksBySections[section].title
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,7 +78,11 @@ extension TodoListViewController {
 		let task = getTaskForIndex(indexPath)
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 		configureCell(cell, with: task)
-		cell.accessibilityIdentifier = "cell.\(indexPath)"
+		// accessibilityIdentifier для ячейки
+		cell.accessibilityIdentifier = AccessibilityIdentifier.ToDoListScene.cell(
+			row: indexPath.row,
+			section: indexPath.section
+		).description
 		return cell
 	}
 
@@ -94,7 +102,7 @@ private extension TodoListViewController {
 		self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
 		// accessibilityIdentifier для таблицы
-		tableView.accessibilityIdentifier = "TodoListViewController.tableView"
+		tableView.accessibilityIdentifier = AccessibilityIdentifier.ToDoListScene.tableView.description
 	}
 
 	func getTaskForIndex(_ indexPath: IndexPath) -> TodoListModel.ViewModel.Task {

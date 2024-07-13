@@ -9,109 +9,97 @@
 import XCTest
 
 final class TodoListScreenObject: BaseScreenObject {
-
-	// MARK: - Private properties
-
-	private lazy var tableView = app.tables.matching(identifier: AccessibilityIdentifier.tableView)
-	private lazy var cellDoHomework = tableView.cells.element(
-		matching: .cell,
-		identifier: AccessibilityIdentifier.cellDoHomework
-	)
-	private lazy var cellDoWorkout = tableView.cells.element(
-		matching: .cell,
-		identifier: AccessibilityIdentifier.cellDoWorkout
-	)
-	private lazy var cellWriteNewTasks = tableView.cells.element(
-		matching: .cell,
-		identifier: AccessibilityIdentifier.cellWriteNewTasks
-	)
-	private lazy var cellSolve3algorithms = tableView.cells.element(
-		matching: .cell,
-		identifier: AccessibilityIdentifier.cellSolve3algorithms
-	)
-	private lazy var cellGoShopping = tableView.cells.element(
-		matching: .cell,
-		identifier: AccessibilityIdentifier.cellGoShopping
-	)
 	
-	private var appLanguage = LaunchArguments.Language.english
-
+	// MARK: - Private properties
+	
+	private lazy var tableView = app.tables[AccessibilityIdentifier.ToDoListScene.tableView.description]
 	// MARK: - ScreenObject Methods
-
+	
 	@discardableResult
 	func isTodoListScreen() -> Self {
-		assert(cellDoHomework, [.exists])
-		assert(cellDoWorkout, [.exists])
-		assert(cellWriteNewTasks, [.exists])
-		assert(cellSolve3algorithms, [.exists])
-		assert(cellGoShopping, [.exists])
-
-		return self
-	}
-	
-	@discardableResult
-	func launchApp(inLanguage language: LaunchArguments.Language) -> Self {
-		setLanguage(language, app: app)
+		assert(tableView, [.exists])
 		launchingApp(app)
-		
-		return self
-	}
-	
-	@discardableResult
-	func displayTaskInformation() -> XCUIElement {
-
-		let taskInformation: String = appLanguage == .russian
-		? "Deadline"
-		: "Выполнить до"
-		
-		
-		
-		return app.tables.staticTexts[taskInformation]
-	}
-	
-	@discardableResult
-	func tapDoHomework() -> Self {
-		cellDoHomework.tap()
 
 		return self
 	}
 	
 	@discardableResult
-	func tapDoWorkout() -> Self {
-		cellDoWorkout.tap()
+	func check(sectionTitle title: String, andSection section: Int) -> Self {
+		let section = get(section: section)
+		
+		XCTAssertEqual(section.label, title)
 		
 		return self
 	}
 	
 	@discardableResult
-	func tapWriteNewTasks() -> Self {
-		cellWriteNewTasks.tap()
+	func check(cellTitle title: String, row: Int, andSection section: Int) -> Self {
+		let cell = get(cellRow: row, andSection: section)
+		assert(cell, [.exists])
+		
+		let titleCell = cell.staticTexts.element(boundBy: 0).label
+		
+		XCTAssertTrue(titleCell.contains(title))
 		
 		return self
 	}
 	
 	@discardableResult
-	func tapSolve3algorithms() -> Self {
-		cellSolve3algorithms.tap()
+	func check(cellDescription description: String, row: Int, andSection section: Int) -> Self {
+		
+		let cell = get(cellRow: row, andSection: section)
+		assert(cell, [.exists])
+		
+		let descriptionCell = cell.staticTexts.element(boundBy: 1).label
+		
+		XCTAssertTrue(descriptionCell.contains(description))
 		
 		return self
 	}
 	
 	@discardableResult
-	func tapGoShopping() -> Self {
-		cellGoShopping.tap()
+	func tapOn(cell: Int, inSection section: Int) -> Self {
+		let cell = get(cellRow: cell, andSection: section)
+		
+		assert(cell, [.exists])
+		
+		cell.tap()
+		
+		return self
+	}
+	
+	@discardableResult
+	func checkCount(selectedItems count: Int) -> Self {
+		assert(tableView, [.exists])
+		
+		let selected = tableView.children(matching: .cell).allElementsBoundByIndex.filter { $0.isSelected }
+		
+		XCTAssertEqual(selected.count, count)
+		
+		return self
+	}
+	
+	@discardableResult
+	func checkCount(unSelectedItems count: Int) -> Self {
+		assert(tableView, [.exists])
+		
+		let unSelected = tableView.children(matching: .cell).allElementsBoundByIndex.filter { !$0.isSelected }
+		
+		XCTAssertEqual(unSelected.count, count)
 		
 		return self
 	}
 }
-
 private extension TodoListScreenObject {
-	/// Смена языка приложения
-	func setLanguage(_ language: LaunchArguments.Language, app: XCUIApplication) {
-		appLanguage = language
-		app.launchArguments += [LaunchArguments.appleLanguages, "(\(language))"]
+	
+	func get(cellRow row: Int, andSection section: Int) -> XCUIElement {
+		tableView.cells[AccessibilityIdentifier.ToDoListScene.cell(row: row, section: section).description]
 	}
 	
+	func get(section: Int) -> XCUIElement {
+		tableView.otherElements[AccessibilityIdentifier.ToDoListScene.section(section).description]
+	}
+
 	/// Запуск приложения с главной сцены
 	func launchingApp(_ app: XCUIApplication) {
 		let loginScreen = LoginScreenObject(app: app)
