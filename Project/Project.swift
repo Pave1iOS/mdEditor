@@ -78,7 +78,8 @@ let project = Project(
 			infoPlist: .extendingDefault(with: infoPlist),
 			sources: [
 				"TodoList/Sources/**",
-				"TodoList/Shared/**"
+				"TodoList/Shared/**",
+				"Derived/Sources/**"
 			],
 			resources: [
 				"TodoList/Resources/**"
@@ -101,7 +102,8 @@ let project = Project(
 				"TodoListUITests/Sources/**",
 				"TodoList/Shared/**",
 				"Derived/Sources/**",
-				"TodoList/Resources/Localization/**"
+				"TodoList/Resources/Localization/**",
+				"Derived/Sources/**"
 			],
 			dependencies: [
 				.target(name: ProjectSettings.projectName)
