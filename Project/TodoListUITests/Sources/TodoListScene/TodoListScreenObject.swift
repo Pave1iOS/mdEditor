@@ -16,8 +16,7 @@ final class TodoListScreenObject: BaseScreenObject {
 	// MARK: - ScreenObject Methods
 	
 	@discardableResult
-	func isTodoListScreen() -> Self {
-		assert(tableView, [.exists])
+	func startTodoListScreen() -> Self {
 		launchingApp(app)
 
 		return self
