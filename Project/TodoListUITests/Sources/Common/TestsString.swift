@@ -9,7 +9,7 @@
 import Foundation
 enum TestsString {
 
-	enum ValidLoginAndPassword{
+	enum ValidLoginAndPassword {
 		static let login = "Admin"
 		static let password = "Pass"
 	}
