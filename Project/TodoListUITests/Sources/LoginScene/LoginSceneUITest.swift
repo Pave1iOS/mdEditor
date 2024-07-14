@@ -11,11 +11,16 @@ final class LoginSceneUITest: XCTestCase {
 
 	func test3_login_withValidCred_mustBeSuccess() {
 
+		let todoListScreen = TodoListScreenObject(app: app)
+
 		loginScreen
 			.isLoginScreen()
 			.set(login: TestsString.ValidLoginAndPassword.login)
 			.set(password: TestsString.ValidLoginAndPassword.password)
 			.login()
+
+		todoListScreen
+			.tapOn(cell: 1, inSection: 0)
 	}
 
 	func test_login_with_InvalidCred_mustBeSuccess() {
