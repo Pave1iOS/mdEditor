@@ -21,9 +21,15 @@ final class LoginViewController: UIViewController, ILoginViewController {
 
 	// MARK: - Private properties
 
-	private lazy var textFieldLogin: UITextField = makeTextField()
-	private lazy var textFieldPass: UITextField = makeTextField()
-	private lazy var buttonLogin: UIButton = makeButtonLogin()
+	private lazy var textFieldLogin: UITextField = makeTextField(
+		accessibilityIdentifier: AccessibilityIdentifier.textFieldLogin
+	)
+	private lazy var textFieldPass: UITextField = makeTextField(
+		accessibilityIdentifier: AccessibilityIdentifier.textFieldPass
+	)
+	private lazy var buttonLogin: UIButton = makeButtonLogin(
+		accessibilityIdentifier: AccessibilityIdentifier.buttonLogin
+	)
 
 	private var constraints = [NSLayoutConstraint]()
 
@@ -72,7 +78,7 @@ private extension LoginViewController {
 
 private extension LoginViewController {
 
-	func makeTextField() -> UITextField {
+	func makeTextField(accessibilityIdentifier: String) -> UITextField {
 		let textField = UITextField()
 
 		textField.backgroundColor = Theme.backgroundColor
@@ -89,10 +95,12 @@ private extension LoginViewController {
 
 		textField.translatesAutoresizingMaskIntoConstraints = false
 
+		textField.accessibilityIdentifier = accessibilityIdentifier
+
 		return textField
 	}
 
-	func makeButtonLogin() -> UIButton {
+	func makeButtonLogin(accessibilityIdentifier: String) -> UIButton {
 		let button = UIButton()
 
 		button.configuration = .filled()
@@ -104,6 +112,7 @@ private extension LoginViewController {
 		button.titleLabel?.adjustsFontForContentSizeCategory = true
 
 		button.translatesAutoresizingMaskIntoConstraints = false
+		button.accessibilityIdentifier = accessibilityIdentifier
 
 		return button
 	}
@@ -132,16 +141,15 @@ private extension LoginViewController {
 			registerForTraitChanges(
 				[UITraitUserInterfaceStyle.self],
 				handler: { (self: Self, _: UITraitCollection) in
-				if self.traitCollection.userInterfaceStyle == .light {
-					self.textFieldLogin.layer.borderColor = Theme.black.cgColor
-					self.textFieldPass.layer.borderColor = Theme.black.cgColor
-				} else {
-					self.textFieldLogin.layer.borderColor = Theme.white.cgColor
-					self.textFieldPass.layer.borderColor = Theme.white.cgColor
-				}
-			})
+					if self.traitCollection.userInterfaceStyle == .light {
+						self.textFieldLogin.layer.borderColor = Theme.black.cgColor
+						self.textFieldPass.layer.borderColor = Theme.black.cgColor
+					} else {
+						self.textFieldLogin.layer.borderColor = Theme.white.cgColor
+						self.textFieldPass.layer.borderColor = Theme.white.cgColor
+					}
+				})
 		}
-
 	}
 }
 
