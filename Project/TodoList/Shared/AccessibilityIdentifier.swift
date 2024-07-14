@@ -9,7 +9,7 @@ enum AccessibilityIdentifier {
 		case tableView
 		case cell(row: Int, section: Int)
 		case section(_ section: Int)
-		
+
 		var description: String {
 			switch self {
 			case .tableView:

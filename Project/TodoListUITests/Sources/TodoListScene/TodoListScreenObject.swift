@@ -23,7 +23,7 @@ final class TodoListScreenObject: BaseScreenObject {
 	}
 
 	@discardableResult
-	func check(sectionTitle title: String, andSection section: Int) -> Self {
+	func check(sectionTitle title: String, andSectionNumber section: Int) -> Self {
 		let section = get(section: section)
 
 		XCTAssertEqual(section.label, title)
@@ -68,7 +68,7 @@ final class TodoListScreenObject: BaseScreenObject {
 	}
 
 	@discardableResult
-	func checkCount(selectedItems count: Int) -> Self {
+	func checkCount(completedItems count: Int) -> Self {
 		assert(tableView, [.exists])
 
 		let selected = tableView.children(matching: .cell).allElementsBoundByIndex.filter { $0.isSelected }
@@ -79,7 +79,7 @@ final class TodoListScreenObject: BaseScreenObject {
 	}
 
 	@discardableResult
-	func checkCount(unSelectedItems count: Int) -> Self {
+	func checkCount(unCompletedItems count: Int) -> Self {
 		assert(tableView, [.exists])
 
 		let unSelected = tableView.children(matching: .cell).allElementsBoundByIndex.filter { !$0.isSelected }
@@ -105,12 +105,9 @@ private extension TodoListScreenObject {
 		app.launch()
 
 		loginScreen
+			.isLoginScreen()
+			.set(login: "Admin")
+			.set(password: "Pass")
 			.login()
-
-		//		loginScreen
-		//			.isLoginScreen()
-		//			.set(login: "Admin")
-		//			.set(password: "Pass")
-		//			.login()
 	}
 }
