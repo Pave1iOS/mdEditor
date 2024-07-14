@@ -1,11 +1,3 @@
-//
-//  TodoListScreenObject.swift
-//  TodoListUITests
-//
-//  Created by Pavel Gribachev on 10.07.2024.
-//  Copyright © 2024 team.seefood. All rights reserved.
-//
-
 import XCTest
 
 final class TodoListScreenObject: BaseScreenObject {

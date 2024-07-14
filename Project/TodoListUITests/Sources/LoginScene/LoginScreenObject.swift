@@ -1,10 +1,3 @@
-//
-//  LoginScreenObject.swift
-//  TodoListUITests
-//
-//  Created by Kirill Leonov on 05.04.2023.
-//
-
 import XCTest
 
 final class LoginScreenObject: BaseScreenObject {

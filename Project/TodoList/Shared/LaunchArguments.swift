@@ -1,11 +1,3 @@
-//
-//  LaunchArguments.swift
-//  MdEditor
-//
-//  Created by Pavel Gribachev on 12.07.2024.
-//  Copyright © 2024 team.seefood. All rights reserved.
-//
-
 import Foundation
 /// enum LaunchArguments для управления языками приложения при тестировании,
 /// содержит аргументы:.

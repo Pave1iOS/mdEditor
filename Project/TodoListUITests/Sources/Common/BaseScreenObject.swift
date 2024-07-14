@@ -1,10 +1,3 @@
-//
-//  BaseScreenObject.swift
-//  TodoListUITests
-//
-//  Created by Kirill Leonov on 05.04.2023.
-//
-
 import XCTest
 
 class BaseScreenObject {
