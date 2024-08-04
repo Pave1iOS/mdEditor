@@ -22,7 +22,12 @@ final class AppCoordinator: BaseCoordinator {
 
 	// MARK: - Public methods
 	override func start() {
-		showLoginFlow()
+//		showLoginFlow()
+		showOpenDocumentDir()
+	}
+	#warning("удалить и исправить")
+	func showOpenDocumentDir() {
+		navigationController.pushViewController(OpenDocumentViewController(), animated: true)
 	}
 
 	func showLoginFlow() {
