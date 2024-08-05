@@ -22,4 +22,3 @@ final class FileManagerAssembler {
 		return viewController
 	}
 }
-			
