@@ -28,5 +28,15 @@ enum MenuModel {
 	struct ViewModel {
 		let recentFiles: [RecentFile]
 		let menu: [MenuItem]
+		
+		struct MenuItem {
+			let title: String
+			let item: MenuIdentifier
+		}
+		
+		struct RecentFile {
+			let previewText: String
+			let fileName: String
+		}
 	}
 }

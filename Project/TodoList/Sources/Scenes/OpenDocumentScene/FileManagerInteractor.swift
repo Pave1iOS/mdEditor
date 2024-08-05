@@ -58,7 +58,7 @@ final class FileManagerInteractor: IFileManagerInteractor {
 		} else {
 			var files: [File] = []
 			
-			if let bundleURL = Bundle.main.url(forResource: "Examples", withExtension: nil),
+			if let bundleURL = Bundle.main.url(forResource: "Documents", withExtension: nil),
 			   case .success(let file) = File.parse(url: bundleURL) {
 				files.append(file)
 			} 
@@ -74,6 +74,8 @@ final class FileManagerInteractor: IFileManagerInteractor {
 			}
 			fileList = FileManagerModel.Response(currentFile: nil, files: files)
 		}
+		guard let fileList = fileList else { return }
+		
 		presenter.present(response: fileList)
 	}
 	
