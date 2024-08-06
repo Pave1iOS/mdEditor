@@ -49,7 +49,7 @@ final class MenuViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		interactor.fetchData()
+		interactor?.fetchData()
 		setupUI()
 	}
 	
@@ -152,13 +152,13 @@ extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSour
 		) as? RecentFileCollectionViewCell
 		
 		let recentFile = viewModel?.recentFiles[indexPath.row]
-		cell.configure(fileName: recentFile.fileName, previewText:recentFile.previewText)
+		cell?.configure(fileName: recentFile?.fileName ?? "", previewText:recentFile?.previewText ?? "")
 		
-		return cell
+		return cell ?? UICollectionViewCell()
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		interactor.performAction(request: .recentFileSelected(indexPath))
+		interactor?.performAction(request: .recentFileSelected(indexPath))
 	}
 }
 
@@ -184,7 +184,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
 				Theme.mainColor,
 				renderingMode: .alwaysOriginal
 			)
-		case .openFile:
+		case .newFile:
 			menuImage = UIImage(systemName: "doc.fill")?.withTintColor(
 				Theme.mainColor,
 				renderingMode: .alwaysOriginal
@@ -194,13 +194,15 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
 				Theme.mainColor,
 				renderingMode: .alwaysOriginal
 			)
+		case .none:
+			break
 		}
 		
-		cell.configure(menuItem: menuItem?.title, menuImage: menuImage ?? UIImage())
+		cell?.configure(menuTitle: menuItem?.title ?? "", menuImage: menuImage ?? UIImage())
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		interactor.performAction(request: .menuItemSelected(indexPath))
+		interactor?.performAction(request: .menuItemSelected(indexPath))
 	}
 }
 

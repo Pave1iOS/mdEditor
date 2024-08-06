@@ -62,7 +62,7 @@ private extension MainCoordinator {
 	}
 }
 
-extension MainCoordinator: IMainMenuDelegate {
+extension MainCoordinator: IMenuDelegate {	
 	func showAbout() {
 		let aboutURL = Bundle.main.url(
 			forResource: "About",
@@ -77,7 +77,7 @@ extension MainCoordinator: IMainMenuDelegate {
 		}
 	}
 	
-	func openFile() {
+	func openFileExplorer() {
 		runFileManagerFlow()
 	}
 	
@@ -85,7 +85,7 @@ extension MainCoordinator: IMainMenuDelegate {
 		show(message: L10n.Menu.newFile)
 	}
 	
-	func openFile(file: File) {
+	func open(file: File) {
 		showTextPreviewScene(file: file)
 	}
 }

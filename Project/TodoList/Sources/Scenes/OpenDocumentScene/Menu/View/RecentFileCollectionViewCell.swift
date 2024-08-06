@@ -95,7 +95,7 @@ private extension RecentFileCollectionViewCell {
 			labelPreviewText.leadingAnchor.constraint(equalTo: viewCover.leadingAnchor, constant: Sizes.Padding.small),
 			labelPreviewText.trailingAnchor.constraint(equalTo: viewCover.trailingAnchor, constant: -Sizes.Padding.small),
 			labelPreviewText.topAnchor.constraint(equalTo: viewCover.topAnchor, constant: Sizes.Padding.small),
-			labelPreviewText.bottomAnchor. constraint(equalTo: viewCover.bottomAnchor, constant: -Sizes.Padding small),
+			labelPreviewText.bottomAnchor.constraint(equalTo: viewCover.bottomAnchor, constant: -Sizes.Padding.small),
 			
 			labelTitle.topAnchor.constraint(equalTo: viewCover.bottomAnchor, constant: Sizes.Padding.normal),
 			labelTitle.leadingAnchor.constraint(equalTo: viewCover.leadingAnchor),

@@ -81,6 +81,6 @@ private extension FileTableViewCell {
 			labelSubtitle.leadingAnchor.constraint(equalTo: imageViewIcon.trailingAnchor, constant: Sizes.Padding.normal),
 			labelSubtitle.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Sizes.Padding.micro),
 			labelSubtitle.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Sizes.Padding.normal)
-			])
+		])
 	}
 }
