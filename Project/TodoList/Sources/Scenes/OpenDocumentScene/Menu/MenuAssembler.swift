@@ -13,7 +13,7 @@ final class MenuAssembler {
 		let viewController = MenuViewController()
 		let presenter = MenuPresenter(viewController: viewController)
 		let interctor = MenuInteractor(presenter: presenter, recentFileManager: recentFileManager, delegate: delegate)
-		
+
 		viewController.interactor = interctor
 		return viewController
 	}

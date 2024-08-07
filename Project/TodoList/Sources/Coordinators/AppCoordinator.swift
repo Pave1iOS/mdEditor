@@ -25,11 +25,11 @@ final class AppCoordinator: BaseCoordinator {
 //		showLoginFlow()
 		showMainMenuScene()
 	}
-	
+
 	func showMainMenuScene() {
 		let coordinator = MainCoordinator(navigationController: navigationController)
 		addDependency(coordinator)
-		
+
 		coordinator.start()
 	}
 

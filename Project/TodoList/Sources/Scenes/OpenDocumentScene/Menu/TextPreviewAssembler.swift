@@ -12,11 +12,10 @@ import UIKit
 final class TextPreviewAssembler {
 	func assembly(file: File) -> UIViewController {
 		let viewController = MenuViewController()
-		
+
 		return viewController
 	}
 }
-
 
 	func assembly(fileExplorer: IFileExplorer, delegate: IFileManagerDelegate, file: File?) -> FileManagerViewController {
 		let viewController = FileManagerViewController()
@@ -30,4 +29,3 @@ final class TextPreviewAssembler {
 		viewController.interactor = interactor
 		return viewController
 	}
-

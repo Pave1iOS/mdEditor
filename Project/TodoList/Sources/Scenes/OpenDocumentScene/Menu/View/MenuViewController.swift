@@ -199,7 +199,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
 		}
 
 		cell?.configure(menuTitle: menuItem?.title ?? "", menuImage: menuImage ?? UIImage())
-		
+
 		return cell ?? UITableViewCell()
 	}
 
