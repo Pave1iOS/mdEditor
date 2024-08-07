@@ -14,7 +14,7 @@ enum FileManagerModel {
 		let currentFolderName: String
 		let files: [FileModel]
 
-		struct FileModel {
+		struct FileModel { // swiftlint:disable:this nesting
 			let name: String
 			let info: String
 			let isFolder: Bool

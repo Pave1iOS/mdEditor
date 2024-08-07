@@ -86,7 +86,7 @@ final class FileManagerInteractor: IFileManagerInteractor {
 			else { return }
 
 			selectedFile.isFolder
-			? delegate?.open(folder: selectedFile)
+			? delegate?.open(folder: selectedFile) // swiftlint:disable:this void_function_in_ternary
 			: delegate?.open(file: selectedFile)
 		}
 	}

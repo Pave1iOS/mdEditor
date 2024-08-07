@@ -36,7 +36,6 @@ final class RecentFileCollectionViewCell: UICollectionViewCell {
 }
 
 private extension RecentFileCollectionViewCell {
-#warning("поменять")
 	func textToColor (_ text: String) -> UIColor {
 		let colors = [
 			Colors.red,

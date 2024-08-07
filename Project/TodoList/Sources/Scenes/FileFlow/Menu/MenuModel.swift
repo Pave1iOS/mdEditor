@@ -29,12 +29,12 @@ enum MenuModel {
 		let recentFiles: [RecentFile]
 		let menu: [MenuItem]
 
-		struct MenuItem {
+		struct MenuItem { // swiftlint:disable:this nesting
 			let title: String
 			let item: MenuIdentifier
 		}
 
-		struct RecentFile {
+		struct RecentFile { // swiftlint:disable:this nesting
 			let previewText: String
 			let fileName: String
 		}
