@@ -23,7 +23,7 @@ final class TextPreviewPresenter: ITextPreviewPresenter {
 		
 		let viewModel = TextPreviewModel.ViewModel(
 			currentTitle: response.fileUrl.lastPathComponent,
-			text: NSAttributedString(string: response.fileContent)
+			text: response.fileContent
 		)
 		viewController?.render(viewModel: viewModel)
 	}

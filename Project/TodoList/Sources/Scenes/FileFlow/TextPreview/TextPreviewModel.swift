@@ -9,6 +9,6 @@ enum TextPreviewModel {
 	
 	struct ViewModel {
 		let currentTitle: String
-		let text: NSAttributedString
+		let text: String
 	}
 }
