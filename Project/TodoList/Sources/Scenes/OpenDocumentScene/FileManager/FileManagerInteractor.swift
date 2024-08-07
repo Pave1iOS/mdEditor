@@ -21,18 +21,18 @@ protocol IFileManagerInteractor {
 final class FileManagerInteractor: IFileManagerInteractor {
 
 	// MARK: - Dependencies
-	
+
 	private let presenter: IFileManagerPresenter
 	private let fileExplorer: IFileExplorer
 	private weak var delegate: IFileManagerDelegate?
-	
+
 	// MARK: - Private properties
-	
+
 	private var fileList: FileManagerModel.Response?
 	private let currentFile: File?
-	
+
 	// MARK: - Initialization
-	
+
 	init(
 		presenter: IFileManagerPresenter,
 		fileExplorer: IFileExplorer,
@@ -44,9 +44,9 @@ final class FileManagerInteractor: IFileManagerInteractor {
 		self.delegate = delegate
 		self.currentFile = file
 	}
-		
+
 	// MARK: - Public methods
-	
+
 	func fetchData() {
 		if let currentFile = currentFile {
 			switch fileExplorer.contentsOfFolder(currentFile.url) {
@@ -57,12 +57,12 @@ final class FileManagerInteractor: IFileManagerInteractor {
 			}
 		} else {
 			var files: [File] = []
-			
+
 			if let bundleURL = Bundle.main.url(forResource: "Documents", withExtension: nil),
 			   case .success(let file) = File.parse(url: bundleURL) {
 				files.append(file)
-			} 
-			
+			}
+
 			if let documentsURL = try? FileManager.default.url(
 				for: .documentDirectory,
 				in: .userDomainMask,
@@ -75,16 +75,16 @@ final class FileManagerInteractor: IFileManagerInteractor {
 			fileList = FileManagerModel.Response(currentFile: nil, files: files)
 		}
 		guard let fileList = fileList else { return }
-		
+
 		presenter.present(response: fileList)
 	}
-	
+
 	func performAction(request: FileManagerModel.Request) {
 		switch request {
 		case .fileSelected(let indexPath):
 			guard let selectedFile = fileList?.files[min(indexPath.row, (fileList?.files.count ?? 0) - 1)]
 			else { return }
-			
+
 			selectedFile.isFolder
 			? delegate?.open(folder: selectedFile)
 			: delegate?.open(file: selectedFile)

@@ -23,11 +23,14 @@ final class AppCoordinator: BaseCoordinator {
 	// MARK: - Public methods
 	override func start() {
 //		showLoginFlow()
-		showOpenDocumentDir()
+		showMainMenuScene()
 	}
-	#warning("удалить и исправить")
-	func showOpenDocumentDir() {
-		navigationController.pushViewController(OpenDocumentViewController(), animated: true)
+	
+	func showMainMenuScene() {
+		let coordinator = MainCoordinator(navigationController: navigationController)
+		addDependency(coordinator)
+		
+		coordinator.start()
 	}
 
 	func showLoginFlow() {
@@ -35,7 +38,7 @@ final class AppCoordinator: BaseCoordinator {
 		addDependency(coordinator)
 		coordinator.finishFlow = { [weak self, weak coordinator] in
 			guard let self = self else { return }
-			
+
 			self.showMainFlow()
 			if let coordinator = coordinator {
 				self.removeDependency(coordinator)

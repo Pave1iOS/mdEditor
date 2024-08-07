@@ -11,7 +11,7 @@ import Foundation
 enum FileExplorerError: Error {
 	case wrongAttribute
 	case wrongOpenFolder
-	
+
 	var description: String {
 		switch self {
 		case .wrongAttribute:
@@ -29,21 +29,21 @@ protocol IFileExplorer {
 }
 
 final class FileExplorer: IFileExplorer {
-	
+
 	private let fileManager = FileManager.default
 	private let fileEncoding = String.Encoding.utf8
-	
+
 	/// Получить содержимое папки
 	func contentsOfFolder(_ url: URL) -> Result<[File], Error> {
 		var files: [File] = []
-		
+
 		do {
 			let fileNames = try fileManager.contentsOfDirectory(atPath: url.relativePath)
 			for fileName in fileNames {
 				switch File.parse(url: url.appendingPathComponent("\(fileName)")) {
 				case .success(let file):
 					files.append(file)
-				case .failure(_):
+				case .failure:
 					return .failure(FileExplorerError.wrongOpenFolder)
 				}
 			}
@@ -52,7 +52,7 @@ final class FileExplorer: IFileExplorer {
 			return .failure(FileExplorerError.wrongAttribute)
 		}
 	}
-	
+
 	/// Создать папку
 	func create(folderIn url: URL, withName name: String) -> Result<File, Error> {
 		do {
@@ -63,7 +63,7 @@ final class FileExplorer: IFileExplorer {
 			return .failure(FileExplorerError.wrongAttribute)
 		}
 	}
-	
+
 	/// Создать файл
 	func create(fileIn url: URL, withName name: String) -> Result<File, Error> {
 		let newFileUrl = url.appendingPathComponent("\(name)")

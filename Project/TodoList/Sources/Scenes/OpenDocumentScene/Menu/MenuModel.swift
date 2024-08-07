@@ -14,26 +14,26 @@ enum MenuModel {
 		case newFile
 		case showAbout
 	}
-	
+
 	enum Request {
 		case menuItemSelected(_ indexPath: IndexPath)
 		case recentFileSelected(_ indexPath: IndexPath)
 	}
-	
+
 	struct Response {
 		let recentFiles: [RecentFile]
 		let menu: [MenuIdentifier]
 	}
-	
+
 	struct ViewModel {
 		let recentFiles: [RecentFile]
 		let menu: [MenuItem]
-		
+
 		struct MenuItem {
 			let title: String
 			let item: MenuIdentifier
 		}
-		
+
 		struct RecentFile {
 			let previewText: String
 			let fileName: String

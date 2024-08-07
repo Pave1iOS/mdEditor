@@ -4,11 +4,11 @@ enum AccessibilityIdentifier {
 	static let textFieldLogin = "LoginViewController.textFieldLogin"
 	static let textFieldPass = "LoginViewController.textFieldPass"
 	static let buttonLogin = "LoginViewController.buttonLogin"
-	
+
 	enum MenuScene {
 		case recentFiles
 		case menu
-		
+
 		var description: String {
 			switch self {
 			case .recentFiles:

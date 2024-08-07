@@ -21,35 +21,35 @@ protocol IMenuInteractor {
 }
 
 final class MenuInteractor: IMenuInteractor {
-	
+
 	// MARK: - Public properties
-	
+
 	// MARK: - Dependencies
-	
+
 	private let presenter: IMenuPresenter
 	private let recentFileManager: IRecentFileManager
 	private weak var delegate: IMenuDelegate?
-	
+
 	// MARK: - Private properties
-	
+
 	let menu: [MenuModel.MenuIdentifier] = [.newFile, .openFile, .showAbout]
-	
+
 	// MARK: - Initialization
-	
+
 	init(presenter: IMenuPresenter, recentFileManager: IRecentFileManager, delegate: IMenuDelegate) {
 		self.presenter = presenter
 		self.recentFileManager = recentFileManager
 		self.delegate = delegate
 	}
-	
+
 	// MARK: - Public methods
-	
+
 	func fetchData() {
 		let recentFiles = recentFileManager.getRecentFiles()
 		let response = MenuModel.Response(recentFiles: recentFiles, menu: menu)
-		presenter.present (response: response)
+		presenter.present(response: response)
 	}
-	
+
 	func performAction(request: MenuModel.Request) {
 		switch request {
 		case .menuItemSelected(let indexPath):
@@ -65,7 +65,7 @@ final class MenuInteractor: IMenuInteractor {
 		case .recentFileSelected(let indexPath):
 			let recentFiles = recentFileManager.getRecentFiles()
 			let recentFile = recentFiles[min(indexPath.row, recentFiles.count - 1)]
-			
+
 			if case .success(let file) = File.parse(url: recentFile.url) {
 				delegate?.open(file: file)
 			}

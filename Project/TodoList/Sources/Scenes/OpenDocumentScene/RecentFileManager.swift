@@ -29,7 +29,7 @@ final class StubRecentFileManager: IRecentFileManager {
 				)!,
 				createDate: Date()
 			),
-			
+
 			RecentFile(
 				previewText: "# Как работать в Markdown с Заголовками",
 				url: Bundle.main.url(
@@ -38,7 +38,7 @@ final class StubRecentFileManager: IRecentFileManager {
 				)!,
 				createDate: Date()
 			),
-			
+
 			RecentFile(
 				previewText: "# Вставка кода (code)",
 				url: Bundle.main.url(
@@ -47,7 +47,7 @@ final class StubRecentFileManager: IRecentFileManager {
 				)!,
 				createDate: Date()
 			),
-			
+
 			RecentFile(
 				previewText: "# Экранирования (escaping characters)",
 				url: Bundle.main.url(
@@ -57,7 +57,7 @@ final class StubRecentFileManager: IRecentFileManager {
 				createDate: Date()
 			)
 		]
-		
+
 		return stub
 	}
 }

@@ -5,13 +5,13 @@ protocol IFileManagerPresenter {
 }
 
 final class FileManagerPresenter: IFileManagerPresenter {
-	
+
 	private weak var viewController: IFileManagerViewController?
-	
+
 	init(viewController: IFileManagerViewController) {
 		self.viewController = viewController
 	}
-	
+
 	func present(response: FileManagerModel.Response) {
 		let files: [FileManagerModel.ViewModel.FileModel] = response.files.map {
 			FileManagerModel.ViewModel.FileModel(
@@ -20,7 +20,7 @@ final class FileManagerPresenter: IFileManagerPresenter {
 				isFolder: $0.isFolder
 			)
 		}
-		
+
 		let viewModel = FileManagerModel.ViewModel(currentFolderName: response.currentFile?.name ?? "/", files: files)
 		viewController?.render(viewModel: viewModel)
 	}
@@ -37,12 +37,12 @@ extension FileManagerPresenter {
 		}
 		return String(format: "%4.2f %@", convertedValue, tokens[multiplyFactor])
 	}
-	
+
 	func getFormattedAttributes(file: File) -> String {
 		let formattedSize = getFormatted(size: file.size)
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "yyyy.MM.dd HH:mm:ss"
-		
+
 		return file.isFolder
 		? "\(dateFormatter.string(from: file.modificationDate)) | <dir>"
 		: "\"\(file.ext)\" – \(dateFormatter.string(from: file.modificationDate)) | \(formattedSize)"
