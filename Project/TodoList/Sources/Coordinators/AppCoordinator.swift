@@ -22,24 +22,17 @@ final class AppCoordinator: BaseCoordinator {
 
 	// MARK: - Public methods
 	override func start() {
-//		showLoginFlow()
-		showMainMenuScene()
-	}
-
-	func showMainMenuScene() {
-		let coordinator = MainCoordinator(navigationController: navigationController)
-		addDependency(coordinator)
-
-		coordinator.start()
+		showLoginFlow()
 	}
 
 	func showLoginFlow() {
 		let coordinator = LoginCordinator(navigationController: navigationController)
 		addDependency(coordinator)
+		
 		coordinator.finishFlow = { [weak self, weak coordinator] in
 			guard let self = self else { return }
 
-			self.showMainFlow()
+			self.showMainMenuFlow()
 			if let coordinator = coordinator {
 				self.removeDependency(coordinator)
 			}
@@ -48,7 +41,7 @@ final class AppCoordinator: BaseCoordinator {
 		coordinator.start()
 	}
 
-	func showMainFlow() {
+	func showMainMenuFlow() {
 		let coordinator = MainCoordinator(navigationController: navigationController)
 		addDependency(coordinator)
 		coordinator.start()

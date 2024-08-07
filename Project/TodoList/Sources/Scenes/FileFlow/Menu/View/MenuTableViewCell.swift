@@ -63,7 +63,7 @@ private extension MenuTableViewCell {
 			imageViewItem.widthAnchor.constraint(equalToConstant: Sizes.M.icon),
 			imageViewItem.heightAnchor.constraint(equalToConstant: Sizes.M.icon),
 
-			label.leadingAnchor.constraint(equalTo: imageViewItem.trailingAnchor, constant: -Sizes.Padding.normal),
+			label.leadingAnchor.constraint(equalTo: imageViewItem.trailingAnchor, constant: Sizes.Padding.normal),
 			label.centerYAnchor.constraint(equalTo: centerYAnchor)
 		])
 	}

@@ -18,6 +18,17 @@ enum AccessibilityIdentifier {
 			}
 		}
 	}
+	
+	enum TextPreviewScene {
+		case textView
+		
+		var description: String {
+			switch self {
+			case .textView:
+				"TextPreviewViewController.textView"
+			}
+		}
+	}
 
 	enum ToDoListScene {
 		case tableView
