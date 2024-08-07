@@ -28,7 +28,7 @@ final class AppCoordinator: BaseCoordinator {
 	func showLoginFlow() {
 		let coordinator = LoginCordinator(navigationController: navigationController)
 		addDependency(coordinator)
-		
+
 		coordinator.finishFlow = { [weak self, weak coordinator] in
 			guard let self = self else { return }
 
