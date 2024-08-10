@@ -81,7 +81,8 @@ let project = Project(
 				"TodoList/Shared/**"
 			],
 			resources: [
-				"TodoList/Resources/**"
+				"TodoList/Resources/**",
+				.folderReference(path: "Documents")
 			],
 			scripts: [
 				swiftLintTargetScript

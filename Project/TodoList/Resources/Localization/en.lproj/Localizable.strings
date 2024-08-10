@@ -26,3 +26,11 @@
 "loginError.errorAuth" = "Error authorization.";
 "loginError.error" = "Error.";
 "loginError.ok" = "OK.";
+// MARK: - Menu Scene
+"Menu.title" = "Table Expression";
+"Menu.openFile" = "Open File";
+"Menu.newFile" = "New File";
+"Menu.about" = "About";
+// MARK: - Alert
+"Message.text" = "Hello i'm tiger 🐯 (no, i'm plain text)";
+"Ok.text" = "OK";

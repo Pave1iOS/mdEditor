@@ -28,15 +28,21 @@ final class AppCoordinator: BaseCoordinator {
 	func showLoginFlow() {
 		let coordinator = LoginCordinator(navigationController: navigationController)
 		addDependency(coordinator)
+
 		coordinator.finishFlow = { [weak self, weak coordinator] in
-			self?.showTodoListFlow()
-			coordinator.map { self?.removeDependency($0) }
+			guard let self = self else { return }
+
+			self.showMainMenuFlow()
+			if let coordinator = coordinator {
+				self.removeDependency(coordinator)
+			}
+			self.navigationController.viewControllers.removeFirst()
 		}
 		coordinator.start()
 	}
 
-	func showTodoListFlow() {
-		let coordinator = TodoListCoordinator(navigationController: navigationController)
+	func showMainMenuFlow() {
+		let coordinator = MainCoordinator(navigationController: navigationController)
 		addDependency(coordinator)
 		coordinator.start()
 	}
