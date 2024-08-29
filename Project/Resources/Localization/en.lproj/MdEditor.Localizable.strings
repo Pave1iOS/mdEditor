@@ -1,0 +1,57 @@
+/*
+ MdEditor.Localizable (English).strings
+
+ */
+
+// MARK: - Common strings
+"Yes.text" = "Yes";
+"No.text" = "No";
+"Return.text" = "Return";
+"Ok.text" = "Ok";
+"Error.text" = "Error";
+"Message.text" = "Message";
+
+// MARK: - Error strings
+"LoginError.wrongPassword" = "Wrong password.";
+"LoginError.wrongLogin" = "Wrong login.";
+"LoginError.emptyFields" = "Empty login or password fields.";
+"LoginError.errorAuth" = "Incorrect password and login.";
+
+// MARK: - Authorization strings
+"Login.title" = "Authorization";
+"Login.buttonTitle" = "Login";
+"Login.LoginPlaceholder" = "Login";
+"Login.PasswordPlaceholder" = "Password";
+
+// MARK: - TodoList strings
+"TodoList.title" = "TodoList";
+"TodoList.deadline" = "Deadline: %@";
+"TodoList.TaskPriority.high" = "!!!";
+"TodoList.TaskPriority.medium" = "!!";
+"TodoList.TaskPriority.low" = "!";
+"TodoList.Section.completed" = "Completed";
+"TodoList.Section.uncompleted" = "Uncompleted";
+"TodoList.Section.allTasks" = "All";
+"TodoList.Section.important" = "Important";
+"TodoList.Section.regular" = "Regular";
+"TodoList.dateFormat" = "yyyy-MM-dd";
+
+// MARK: - TaskData strings
+"Task.doHomework" = "Do homework";
+"Task.doWorkout" = "Do Workout";
+"Task.writeNewTasks" = "Write new tasks";
+"Task.solve3Algorithms" = "Solve 3 algorithms";
+"Task.goShopping" = "Go shopping";
+
+// MARK: - Menu
+"Menu.Title" = "MD Editor";
+"Menu.openFile" = "Open File";
+"Menu.newFile" = "New File";
+"Menu.about" = "About";
+
+// MARK: - Other
+"aboutFileName" = "about_eng";
+
+// MARK: - Editor
+"Editor.segmentItemText" = "Edit";
+"Editor.segmentItemConverter" = "Preview";

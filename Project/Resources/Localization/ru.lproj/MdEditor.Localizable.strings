@@ -1,0 +1,57 @@
+/*
+ MdEditor.Localizable (Russian).strings
+
+ */
+
+// MARK: - Common strings
+"Yes.text" = "Да";
+"No.text" = "Нет";
+"Return.text" = "Вернуться";
+"Ok.text" = "Ок";
+"Error.text" = "Ошибка";
+"Message.text" = "Сообщение";
+
+// MARK: - Error strings
+"LoginError.wrongPassword" = "Неверный пароль.";
+"LoginError.wrongLogin" = "Неверный логин.";
+"LoginError.emptyFields" = "Пустые поля логин или пароль.";
+"LoginError.errorAuth" = "Неверный пароль и логин.";
+
+// MARK: - Authorization strings
+"Login.title" = "Авторизация";
+"Login.buttonTitle" = "Вход";
+"Login.LoginPlaceholder" = "Логин";
+"Login.PasswordPlaceholder" = "Пароль";
+
+// MARK: - TodoList strings
+"TodoList.title" = "Задачи";
+"TodoList.deadline" = "Крайний срок: %@";
+"TodoList.TaskPriority.high" = "!!!";
+"TodoList.TaskPriority.medium" = "!!";
+"TodoList.TaskPriority.low" = "!";
+"TodoList.Section.completed" = "Выполненные";
+"TodoList.Section.uncompleted" = "Невыполненные";
+"TodoList.Section.allTasks" = "Все";
+"TodoList.Section.important" = "Важные";
+"TodoList.Section.regular" = "Обычные";
+"TodoList.dateFormat" = "dd MMMM YYYY г.";
+
+// MARK: - TaskData strings
+"Task.doHomework" = "Выполнить домашнее задание";
+"Task.doWorkout" = "Выполнить тренировку";
+"Task.writeNewTasks" = "Написать новые задачи";
+"Task.solve3Algorithms" = "Решить 3 алгоритма";
+"Task.goShopping" = "Пойти за покупками";
+
+// MARK: - Menu
+"Menu.Title" = "MD Editor";
+"Menu.openFile" = "Открыть документ";
+"Menu.newFile" = "Создать документ";
+"Menu.about" = "О приложении";
+
+// MARK: - Other
+"aboutFileName" = "about_rus";
+
+// MARK: - Editor
+"Editor.segmentItemText" = "Редактор";
+"Editor.segmentItemConverter" = "Просмотр";
